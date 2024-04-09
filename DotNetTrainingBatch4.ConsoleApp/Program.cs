@@ -52,4 +52,4 @@ foreach (DataRow dr in dt.Rows)
 // Ado.Net Read
 // CRUD
 
-Console.ReadKey();
+Console.ReadLine();
