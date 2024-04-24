@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DotNetTrainingBatch4.RestApi.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.ConsoleApp
+namespace DotNetTrainingBatch4.RestApi.Db
 {
     internal class AppDbContext : DbContext
     {
@@ -14,6 +15,6 @@ namespace DotNetTrainingBatch4.ConsoleApp
             optionsBuilder.UseSqlServer(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         }
 
-        public DbSet<BlogDto> Blogs { get; set; }
+        public DbSet<BlogModel> Blogs { get; set; }
     }
 }

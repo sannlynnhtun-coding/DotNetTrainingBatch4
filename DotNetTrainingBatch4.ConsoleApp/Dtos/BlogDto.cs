@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.ConsoleApp;
+namespace DotNetTrainingBatch4.ConsoleApp.Dtos;
 
 [Table("Tbl_Blog")]
 public class BlogDto
 {
-    [Key] 
+    [Key]
     public int BlogId { get; set; }
     public string BlogTitle { get; set; }
     public string BlogAuthor { get; set; }

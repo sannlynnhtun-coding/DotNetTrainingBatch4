@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.ConsoleApp
+namespace DotNetTrainingBatch4.RestApi
 {
     internal static class ConnectionStrings
     {

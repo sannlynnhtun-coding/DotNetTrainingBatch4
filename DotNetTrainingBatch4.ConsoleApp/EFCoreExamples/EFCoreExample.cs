@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DotNetTrainingBatch4.ConsoleApp.Dtos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.ConsoleApp
+namespace DotNetTrainingBatch4.ConsoleApp.EFCoreExamples
 {
     internal class EFCoreExample
     {

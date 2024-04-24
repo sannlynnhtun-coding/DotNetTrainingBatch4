@@ -1,4 +1,4 @@
-﻿using DotNetTrainingBatch4.ConsoleApp;
+﻿using DotNetTrainingBatch4.ConsoleApp.EFCoreExamples;
 using System.Data;
 using System.Data.SqlClient;
 
