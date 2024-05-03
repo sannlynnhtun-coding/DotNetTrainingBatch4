@@ -1,6 +1,4 @@
-﻿using DotNetTrainingBatch4.RestApi.Db;
-
-namespace DotNetTrainingBatch4.RestApi.Controllers;
+﻿namespace DotNetTrainingBatch4.RestApi.Controllers;
 
 // https://localhost:3000 => domain url
 // api/blog => endpoint
