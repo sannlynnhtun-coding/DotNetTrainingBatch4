@@ -12,7 +12,7 @@ public class BlogAdoDotNetController : ControllerBase
     [HttpGet]
     public IActionResult GetBlogs()
     {
-        string query = "select * from tbl_blog";
+        string query = "select * from tbl_blogs";
 
         SqlConnection connection = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         connection.Open();
@@ -118,7 +118,7 @@ public class BlogAdoDotNetController : ControllerBase
     [HttpPut("{id}")]
     public IActionResult PutBlog(int id, BlogModel blog)
     {
-        string getQuery = "SELECT COUNT(*) FROM tbl_blog WHERE BlogId = @BlogId";
+        string getQuery = "SELECT COUNT(*) FROM tbl_blogs WHERE BlogId = @BlogId";
         SqlConnection connection = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         connection.Open();
         SqlCommand checkCmd = new SqlCommand(getQuery, connection);
@@ -126,7 +126,7 @@ public class BlogAdoDotNetController : ControllerBase
         var count = (int)checkCmd.ExecuteScalar();
         if (count == 0) return NotFound();
 
-        string updateQuery = @"UPDATE [dbo].[Tbl_Blog]
+        string updateQuery = @"UPDATE [dbo].[Tbl_Blogs]
                            SET [BlogTitle] = @BlogTitle,
                                [BlogAuthor] = @BlogAuthor,
                                [BlogContent] = @BlogContent
@@ -137,6 +137,7 @@ public class BlogAdoDotNetController : ControllerBase
         cmd.Parameters.AddWithValue("@BlogTitle", blog.BlogTitle);
         cmd.Parameters.AddWithValue("@BlogAuthor", blog.BlogAuthor);
         cmd.Parameters.AddWithValue("@BlogContent", blog.BlogContent);
+
         int result = cmd.ExecuteNonQuery();
         connection.Close();
         string message = result > 0 ? "Updating Successful." : "Updating Failed.";
@@ -146,7 +147,7 @@ public class BlogAdoDotNetController : ControllerBase
     [HttpPatch("{id}")]
     public IActionResult PatchBlog(int id, BlogModel blog)
     {
-        string getQuery = "SELECT COUNT(*) FROM tbl_blog WHERE BlogId = @BlogId";
+        string getQuery = "SELECT COUNT(*) FROM tbl_blogs WHERE BlogId = @BlogId";
         SqlConnection connection = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         connection.Open();
         SqlCommand checkCmd = new SqlCommand(getQuery, connection);
@@ -154,17 +155,30 @@ public class BlogAdoDotNetController : ControllerBase
         var count = (int)checkCmd.ExecuteScalar();
         if (count == 0) return NotFound();
 
-        string updateQuery = @"UPDATE [dbo].[Tbl_Blog]
+        string updateQuery = @"UPDATE [dbo].[Tbl_Blogs]
                            SET [BlogTitle] = @BlogTitle,
                                [BlogAuthor] = @BlogAuthor,
                                [BlogContent] = @BlogContent
                            WHERE BlogId = @BlogId";
 
         SqlCommand cmd = new SqlCommand(updateQuery, connection);
+
         cmd.Parameters.AddWithValue("@BlogId", id);
-        cmd.Parameters.AddWithValue("@BlogTitle", blog.BlogTitle);
-        cmd.Parameters.AddWithValue("@BlogAuthor", blog.BlogAuthor);
-        cmd.Parameters.AddWithValue("@BlogContent", blog.BlogContent);
+        if (!string.IsNullOrEmpty(blog.BlogTitle))
+        {
+            cmd.Parameters.AddWithValue("@BlogTitle", blog.BlogTitle);
+        }
+
+        if (!string.IsNullOrEmpty(blog.BlogAuthor))
+        {
+            cmd.Parameters.AddWithValue("@BlogAuthor", blog.BlogAuthor);
+        }
+
+        if (!string.IsNullOrEmpty(blog.BlogContent))
+        {
+            cmd.Parameters.AddWithValue("@BlogContent", blog.BlogContent);
+        }
+
         int result = cmd.ExecuteNonQuery();
 
         string message = result > 0 ? "Updating Successful." : "Updating Failed.";
@@ -174,18 +188,18 @@ public class BlogAdoDotNetController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult DeleteBlog(int id)
     {
-        string query = @"DELETE FROM [dbo].[Tbl_blog]
-                           WHERE blog_Id = @blog_id";
+        string query = @"DELETE FROM [dbo].[Tbl_Blogs]
+                           WHERE BlogId = @BlogId";
         SqlConnection connection = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         connection.Open();
 
         SqlCommand cmd = new SqlCommand(query, connection);
-        cmd.Parameters.AddWithValue("@blog_id", id);
+        cmd.Parameters.AddWithValue("@BlogId", id);
 
         int result = cmd.ExecuteNonQuery();
         connection.Close();
 
-        string message = result > 0 ? "Updating Successful." : "Updating Failed.";
+        string message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
         return Ok(message);
     }
 }
