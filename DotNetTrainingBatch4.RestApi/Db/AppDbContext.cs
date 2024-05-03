@@ -1,5 +1,4 @@
-﻿using DotNetTrainingBatch4.RestApi.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 namespace DotNetTrainingBatch4.RestApi.Db;
 
 internal class AppDbContext : DbContext
