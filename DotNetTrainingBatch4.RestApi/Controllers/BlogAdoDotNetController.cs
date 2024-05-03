@@ -143,7 +143,7 @@ public class BlogAdoDotNetController : ControllerBase
         return Ok(message);
     }
 
-    [HttpPatch]
+    [HttpPatch("{id}")]
     public IActionResult PatchBlog(int id, BlogModel blog)
     {
         string getQuery = "SELECT COUNT(*) FROM tbl_blog WHERE BlogId = @BlogId";
