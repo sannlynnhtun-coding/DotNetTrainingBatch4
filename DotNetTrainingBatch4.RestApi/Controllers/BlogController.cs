@@ -1,6 +1,4 @@
 ﻿using DotNetTrainingBatch4.RestApi.Db;
-using DotNetTrainingBatch4.RestApi.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetTrainingBatch4.RestApi.Controllers;
 
