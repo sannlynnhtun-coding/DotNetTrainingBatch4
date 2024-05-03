@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
-namespace DotNetTrainingBatch4.RestApi
+namespace DotNetTrainingBatch4.RestApi;
+
+internal static class ConnectionStrings
 {
-    internal static class ConnectionStrings
+    public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new SqlConnectionStringBuilder()
     {
-        public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new SqlConnectionStringBuilder()
-        {
-            DataSource = ".",
-            InitialCatalog = "DotNetTrainingBatch4",
-            UserID = "sa",
-            Password = "sasa@123",
-            TrustServerCertificate = true
-        };
-    }
+        DataSource = ".",
+        InitialCatalog = "DotNetTrainingBatch4",
+        UserID = "sa",
+        Password = "sasa@123",
+        TrustServerCertificate = true
+    };
 }
