@@ -1,8 +1,4 @@
-﻿using DotNetTrainingBatch4.RestApi.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Data;
-using System.Data.SqlClient;
+﻿using Microsoft.AspNetCore.Http;
 using DotNetTrainingBatch4.Shared;
 
 namespace DotNetTrainingBatch4.RestApi.Controllers
