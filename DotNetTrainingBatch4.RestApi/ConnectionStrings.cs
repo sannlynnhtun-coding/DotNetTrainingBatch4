@@ -1,6 +1,4 @@
-﻿using System.Data.SqlClient;
-
-namespace DotNetTrainingBatch4.RestApi;
+﻿namespace DotNetTrainingBatch4.RestApi;
 
 internal static class ConnectionStrings
 {
