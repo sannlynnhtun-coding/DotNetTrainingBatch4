@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DotNetTrainingBatch4.RestApi.Models;
 
-[Table("Tbl_Blogs")]
+[Table("Tbl_Blog")]
 public class BlogModel
 {
     [Key]
