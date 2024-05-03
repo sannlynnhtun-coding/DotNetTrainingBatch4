@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
 namespace DotNetTrainingBatch4.RestApi.Models;
 
-[Table("Tbl_Blog")]
+[Table("Tbl_Blogs")]
 public class BlogModel
 {
     [Key]
