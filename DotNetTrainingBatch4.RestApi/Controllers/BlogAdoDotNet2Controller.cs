@@ -1,4 +1,6 @@
-﻿namespace DotNetTrainingBatch4.RestApi.Controllers;
+﻿using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+
+namespace DotNetTrainingBatch4.RestApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -66,6 +68,47 @@ public class BlogAdoDotNet2Controller : ControllerBase
 
         string message = result > 0 ? "Saving Successful." : "Saving Failed.";
         //return StatusCode(500, message);
+        return Ok(message);
+    }
+
+    [HttpPatch("{id}")]
+    public IActionResult PatchBlog(int id, BlogModel blog)
+    {
+        List<AdoDotNetParameter> lst = new List<AdoDotNetParameter>();
+        string conditions = string.Empty;
+        if (!string.IsNullOrEmpty(blog.BlogTitle))
+        {
+            conditions += " [BlogTitle] = @BlogTitle, ";
+            lst.Add(new AdoDotNetParameter("@BlogTitle", blog.BlogTitle));
+        }
+
+        if (!string.IsNullOrEmpty(blog.BlogAuthor))
+        {
+            conditions += " [BlogAuthor] = @BlogAuthor, ";
+            lst.Add(new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor));
+        }
+
+        if (!string.IsNullOrEmpty(blog.BlogContent))
+        {
+            conditions += " [BlogContent] = @BlogContent, ";
+            lst.Add(new AdoDotNetParameter("@BlogContent", blog.BlogContent));
+        }
+
+        if (conditions.Length == 0)
+        {
+            var response = new { IsSuccess = false, Message = "No data found." };
+            return NotFound(response);
+        }
+        lst.Add(new AdoDotNetParameter("@BlogId", id));
+
+        conditions = conditions.Substring(0, conditions.Length - 2);
+        string query = $@"UPDATE [dbo].[Tbl_Blog] SET {conditions} WHERE BlogId = @BlogId";
+
+        int result = _adoDotNetService.Execute(query,
+            lst.ToArray()
+        );
+
+        string message = result > 0 ? "Updating Successful." : "Updating Failed.";
         return Ok(message);
     }
 }
