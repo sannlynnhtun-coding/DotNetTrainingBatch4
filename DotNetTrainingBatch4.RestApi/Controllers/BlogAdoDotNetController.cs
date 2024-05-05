@@ -205,8 +205,7 @@ public class BlogAdoDotNetController : ControllerBase
 
         conditions = conditions.TrimEnd(',', ' ');
         query = $@"UPDATE [dbo].[Tbl_Blog] SET {conditions} WHERE BlogId = @BlogId";
-
-        using SqlCommand cmd2 = new SqlCommand(query, connection);
+        SqlCommand cmd2 = new SqlCommand(query, connection);
         cmd2.Parameters.AddWithValue("@BlogId", id);
         cmd2.Parameters.AddRange(parameters.ToArray());
 
