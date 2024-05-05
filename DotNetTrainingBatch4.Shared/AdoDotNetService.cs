@@ -31,6 +31,7 @@ namespace DotNetTrainingBatch4.Shared
                 var parametersArray = parameters.Select(item => new SqlParameter(item.Name, item.Value)).ToArray();
                 cmd.Parameters.AddRange(parametersArray);
             }
+
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sqlDataAdapter.Fill(dt);
@@ -61,6 +62,7 @@ namespace DotNetTrainingBatch4.Shared
                 var parametersArray = parameters.Select(item => new SqlParameter(item.Name, item.Value)).ToArray();
                 cmd.Parameters.AddRange(parametersArray);
             }
+
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sqlDataAdapter.Fill(dt);
@@ -83,6 +85,7 @@ namespace DotNetTrainingBatch4.Shared
             {
                 cmd.Parameters.AddRange(parameters.Select(item => new SqlParameter(item.Name, item.Value)).ToArray());
             }
+
             var result = cmd.ExecuteNonQuery();
 
             connection.Close();
@@ -92,12 +95,16 @@ namespace DotNetTrainingBatch4.Shared
 
     public class AdoDotNetParameter
     {
-        public AdoDotNetParameter() { }
+        public AdoDotNetParameter()
+        {
+        }
+
         public AdoDotNetParameter(string name, object value)
         {
             Name = name;
             Value = value;
         }
+
         public string Name { get; set; }
         public object Value { get; set; }
     }
