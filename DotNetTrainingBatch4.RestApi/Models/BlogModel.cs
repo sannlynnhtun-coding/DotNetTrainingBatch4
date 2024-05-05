@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace DotNetTrainingBatch4.RestApi.Models;
+﻿namespace DotNetTrainingBatch4.RestApi.Models;
 
 [Table("Tbl_Blog")]
 public class BlogModel
