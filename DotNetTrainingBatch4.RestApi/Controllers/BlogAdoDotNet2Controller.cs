@@ -1,6 +1,4 @@
-﻿using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-
-namespace DotNetTrainingBatch4.RestApi.Controllers;
+﻿namespace DotNetTrainingBatch4.RestApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -71,6 +69,26 @@ public class BlogAdoDotNet2Controller : ControllerBase
         return Ok(message);
     }
 
+    [HttpPut("{id}")]
+    public IActionResult PutBlog(int id, BlogModel blog)
+    {
+        string query = @"UPDATE [dbo].[Tbl_Blog]
+                        SET [BlogTitle] = @BlogTitle,
+                            [BlogAuthor] = @BlogAuthor,
+                            [BlogContent] = @BlogContent
+                        WHERE [BlogId] = @BlogId";
+
+        int result = _adoDotNetService.Execute(query,
+            new AdoDotNetParameter("@BlogId", id),
+            new AdoDotNetParameter("@BlogTitle", blog.BlogTitle),
+            new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor),
+            new AdoDotNetParameter("@BlogContent", blog.BlogContent)
+        );
+
+        string message = result > 0 ? "Update Successful." : "Update Failed.";
+        return Ok(message);
+    }
+
     [HttpPatch("{id}")]
     public IActionResult PatchBlog(int id, BlogModel blog)
     {
@@ -99,6 +117,7 @@ public class BlogAdoDotNet2Controller : ControllerBase
             var response = new { IsSuccess = false, Message = "No data found." };
             return NotFound(response);
         }
+
         lst.Add(new AdoDotNetParameter("@BlogId", id));
 
         conditions = conditions.Substring(0, conditions.Length - 2);
@@ -109,6 +128,17 @@ public class BlogAdoDotNet2Controller : ControllerBase
         );
 
         string message = result > 0 ? "Updating Successful." : "Updating Failed.";
+        return Ok(message);
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteBlog(int id)
+    {
+        string query = @"DELETE FROM [dbo].[Tbl_Blog]
+                           WHERE BlogId = @BlogId";
+
+        int result = _adoDotNetService.Execute(query, new AdoDotNetParameter("@BlogId", id));
+        string message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
         return Ok(message);
     }
 }
