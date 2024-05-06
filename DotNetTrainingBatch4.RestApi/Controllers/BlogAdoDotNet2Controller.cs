@@ -80,9 +80,9 @@ public class BlogAdoDotNet2Controller : ControllerBase
 
         int result = _adoDotNetService.Execute(query,
             new AdoDotNetParameter("@BlogId", id),
-            new AdoDotNetParameter("@BlogTitle", blog.BlogTitle),
-            new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor),
-            new AdoDotNetParameter("@BlogContent", blog.BlogContent)
+            new AdoDotNetParameter("@BlogTitle", blog.BlogTitle!),
+            new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor!),
+            new AdoDotNetParameter("@BlogContent", blog.BlogContent!)
         );
 
         string message = result > 0 ? "Update Successful." : "Update Failed.";
@@ -97,19 +97,19 @@ public class BlogAdoDotNet2Controller : ControllerBase
         if (!string.IsNullOrEmpty(blog.BlogTitle))
         {
             conditions += " [BlogTitle] = @BlogTitle, ";
-            lst.Add(new AdoDotNetParameter("@BlogTitle", blog.BlogTitle));
+            lst.Add("@BlogTitle", blog.BlogTitle);
         }
 
         if (!string.IsNullOrEmpty(blog.BlogAuthor))
         {
             conditions += " [BlogAuthor] = @BlogAuthor, ";
-            lst.Add(new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor));
+            lst.Add("@BlogAuthor", blog.BlogAuthor);
         }
 
         if (!string.IsNullOrEmpty(blog.BlogContent))
         {
             conditions += " [BlogContent] = @BlogContent, ";
-            lst.Add(new AdoDotNetParameter("@BlogContent", blog.BlogContent));
+            lst.Add("@BlogContent", blog.BlogContent);
         }
 
         if (conditions.Length == 0)

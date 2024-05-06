@@ -108,4 +108,13 @@ namespace DotNetTrainingBatch4.Shared
         public string Name { get; set; }
         public object Value { get; set; }
     }
+
+    public static class AdoDotNetParameterListExtension
+    {
+        public static List<AdoDotNetParameter> Add(this List<AdoDotNetParameter> lst, string name, object value)
+        {
+            lst.Add(new AdoDotNetParameter(name, value));
+            return lst;
+        }
+    }
 }
