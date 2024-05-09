@@ -1,5 +1,4 @@
 ﻿using DotNetTrainingBatch4.ConsoleAppHttpClientExamples;
-using Newtonsoft.Json;
 
 Console.WriteLine("Hello, World!");
 

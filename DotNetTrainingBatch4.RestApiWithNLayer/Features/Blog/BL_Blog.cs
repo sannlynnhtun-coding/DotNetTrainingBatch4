@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace DotNetTrainingBatch4.RestApiWithNLayer.Features.Blog
+﻿namespace DotNetTrainingBatch4.RestApiWithNLayer.Features.Blog
 {
     public class BL_Blog
     {

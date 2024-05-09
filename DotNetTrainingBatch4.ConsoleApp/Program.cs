@@ -1,6 +1,4 @@
 ﻿using DotNetTrainingBatch4.ConsoleApp.EFCoreExamples;
-using System.Data;
-using System.Data.SqlClient;
 
 Console.WriteLine("Hello, World!");
 

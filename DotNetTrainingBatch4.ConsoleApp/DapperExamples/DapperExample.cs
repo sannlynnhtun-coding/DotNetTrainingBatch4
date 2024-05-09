@@ -1,14 +1,8 @@
 ﻿using Dapper;
 using DotNetTrainingBatch4.ConsoleApp.Dtos;
 using DotNetTrainingBatch4.ConsoleApp.Services;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DotNetTrainingBatch4.ConsoleApp.DapperExamples
 {
