@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.Consol
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{F3BC4821-6835-462B-9107-67F703C456C7}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 		DotNetTrainingBatch4.sql = DotNetTrainingBatch4.sql
 		README.md = README.md
 	EndProjectSection
@@ -23,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.Consol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.ConsoleAppRestClientExamples", "DotNetTrainingBatch4.ConsoleAppRestClientExamples\DotNetTrainingBatch4.ConsoleAppRestClientExamples.csproj", "{B5182384-2EA1-45E9-B72B-B98245FA28A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.PizzaApi", "DotNetTrainingBatch4.PizzaApi\DotNetTrainingBatch4.PizzaApi.csproj", "{3353E9E7-7EF1-4781-BA08-3D80D28BB30B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.PizzaApi", "DotNetTrainingBatch4.PizzaApi\DotNetTrainingBatch4.PizzaApi.csproj", "{3353E9E7-7EF1-4781-BA08-3D80D28BB30B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
