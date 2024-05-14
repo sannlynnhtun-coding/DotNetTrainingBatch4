@@ -1,3 +1,12 @@
+[Clear git local cache](https://stackoverflow.com/questions/41863484/clear-git-local-cache)
+```bash
+git rm -r --cached .
+git add .
+git commit -am 'git cache cleared'
+git push
+```
+
+
 https://medium.com/@buttertechn/qa-testing-what-is-dev-sit-uat-prod-ac97965ce4f
 
 EF Core
