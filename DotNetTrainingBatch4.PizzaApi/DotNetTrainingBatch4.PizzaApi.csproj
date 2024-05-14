@@ -14,4 +14,8 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\DotNetTrainingBatch4.Shared\DotNetTrainingBatch4.Shared.csproj" />
+	</ItemGroup>
+
 </Project>
