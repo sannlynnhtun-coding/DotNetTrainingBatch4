@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.Consol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.PizzaApi", "DotNetTrainingBatch4.PizzaApi\DotNetTrainingBatch4.PizzaApi.csproj", "{3353E9E7-7EF1-4781-BA08-3D80D28BB30B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.ConsoleAppRefitExamples", "DotNetTrainingBatch4.ConsoleAppRefitExamples\DotNetTrainingBatch4.ConsoleAppRefitExamples.csproj", "{A43C0E34-35F3-479E-8F98-086D49F0EDDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.ConsoleAppRefitExamples", "DotNetTrainingBatch4.ConsoleAppRefitExamples\DotNetTrainingBatch4.ConsoleAppRefitExamples.csproj", "{A43C0E34-35F3-479E-8F98-086D49F0EDDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.WinFormsApp", "DotNetTrainingBatch4.WinFormsApp\DotNetTrainingBatch4.WinFormsApp.csproj", "{4984365E-A120-4224-9851-71584C55443D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{A43C0E34-35F3-479E-8F98-086D49F0EDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A43C0E34-35F3-479E-8F98-086D49F0EDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A43C0E34-35F3-479E-8F98-086D49F0EDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4984365E-A120-4224-9851-71584C55443D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4984365E-A120-4224-9851-71584C55443D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4984365E-A120-4224-9851-71584C55443D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4984365E-A120-4224-9851-71584C55443D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
