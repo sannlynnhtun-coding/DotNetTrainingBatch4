@@ -48,5 +48,10 @@ namespace DotNetTrainingBatch4.WinFormsApp
 
             txtTitle.Focus();
         }
+
+        private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
