@@ -44,6 +44,7 @@
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(436, 30);
             txtTitle.TabIndex = 1;
+            txtTitle.TextChanged += txtTitle_TextChanged;
             // 
             // txtAuthor
             // 
