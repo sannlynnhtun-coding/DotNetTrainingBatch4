@@ -16,5 +16,11 @@ namespace DotNetTrainingBatch4.WinFormsApp.Queries
            (@BlogTitle
            ,@BlogAuthor       
            ,@BlogContent)";
+
+        public static string BlogList { get; } = @"SELECT [BlogId]
+      ,[BlogTitle]
+      ,[BlogAuthor]
+      ,[BlogContent]
+  FROM [dbo].[Tbl_Blog]";
     }
 }

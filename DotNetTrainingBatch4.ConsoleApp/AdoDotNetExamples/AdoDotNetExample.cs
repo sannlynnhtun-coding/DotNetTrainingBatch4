@@ -39,13 +39,14 @@ namespace DotNetTrainingBatch4.ConsoleApp.AdoDotNetExamples
             }
         }
 
-        public void Edit(int id)
+        public void Edit(string id)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
 
             connection.Open();
 
             string query = "select * from tbl_blog where BlogId = @BlogId";
+            //string query = $"select * from tbl_blog where BlogId = {id}";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@BlogId", id);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);

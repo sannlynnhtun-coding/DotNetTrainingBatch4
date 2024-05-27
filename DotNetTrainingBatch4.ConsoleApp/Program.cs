@@ -1,4 +1,5 @@
-﻿using DotNetTrainingBatch4.ConsoleApp.EFCoreExamples;
+﻿using DotNetTrainingBatch4.ConsoleApp.AdoDotNetExamples;
+using DotNetTrainingBatch4.ConsoleApp.EFCoreExamples;
 
 Console.WriteLine("Hello, World!");
 
@@ -58,13 +59,27 @@ Console.WriteLine("Hello, World!");
 ////adoDotNetExample.Delete(1003);
 ////adoDotNetExample.Update(1002, "test title", "test author", "test content");
 ////adoDotNetExample.Delete(1002);
-//adoDotNetExample.Edit(1002);
+//adoDotNetExample.Edit("1002 or 1=1");
 //adoDotNetExample.Edit(1);
 
 //DapperExample dapperExample = new DapperExample();
 //dapperExample.Run();
 
-EFCoreExample eFCoreExample = new EFCoreExample();
-eFCoreExample.Run();
+//EFCoreExample eFCoreExample = new EFCoreExample();
+//eFCoreExample.Run();
+
+try
+{
+
+}
+catch (Exception ex)
+{
+
+	throw;
+}
+finally
+{
+
+}
 
 Console.ReadLine();

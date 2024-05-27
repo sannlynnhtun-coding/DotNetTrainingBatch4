@@ -41,3 +41,8 @@ SLHDotNetCore (Folder Structure)
 
 
 ![!Alter Text](https://voyager.postman.com/illustration/diagram-what-is-an-api-postman-illustration.svg)
+
+
+.net framework (1, 4.8.1)
+.net core (1, 3.1)
+.net (5, 9)
