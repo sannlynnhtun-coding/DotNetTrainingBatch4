@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.PizzaA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.ConsoleAppRefitExamples", "DotNetTrainingBatch4.ConsoleAppRefitExamples\DotNetTrainingBatch4.ConsoleAppRefitExamples.csproj", "{A43C0E34-35F3-479E-8F98-086D49F0EDDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.WinFormsApp", "DotNetTrainingBatch4.WinFormsApp\DotNetTrainingBatch4.WinFormsApp.csproj", "{4984365E-A120-4224-9851-71584C55443D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.WinFormsApp", "DotNetTrainingBatch4.WinFormsApp\DotNetTrainingBatch4.WinFormsApp.csproj", "{4984365E-A120-4224-9851-71584C55443D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.WinFormsAppSqlInjection", "DotNetTrainingBatch4.WinFormsAppSqlInjection\DotNetTrainingBatch4.WinFormsAppSqlInjection.csproj", "{0C74BCCB-94E4-4C72-8A6F-FD46391B5924}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{4984365E-A120-4224-9851-71584C55443D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4984365E-A120-4224-9851-71584C55443D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4984365E-A120-4224-9851-71584C55443D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C74BCCB-94E4-4C72-8A6F-FD46391B5924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C74BCCB-94E4-4C72-8A6F-FD46391B5924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C74BCCB-94E4-4C72-8A6F-FD46391B5924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C74BCCB-94E4-4C72-8A6F-FD46391B5924}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
