@@ -53,6 +53,7 @@
             dgvData.RowTemplate.Height = 29;
             dgvData.Size = new Size(800, 450);
             dgvData.TabIndex = 0;
+            dgvData.CellContentClick += dgvData_CellContentClick;
             // 
             // colId
             // 
@@ -61,7 +62,6 @@
             colId.MinimumWidth = 6;
             colId.Name = "colId";
             colId.ReadOnly = true;
-            colId.Visible = false;
             // 
             // colEdit
             // 
@@ -70,6 +70,7 @@
             colEdit.Name = "colEdit";
             colEdit.ReadOnly = true;
             colEdit.Text = "Edit";
+            colEdit.UseColumnTextForButtonValue = true;
             // 
             // colDelete
             // 
@@ -78,6 +79,7 @@
             colDelete.Name = "colDelete";
             colDelete.ReadOnly = true;
             colDelete.Text = "Delete";
+            colDelete.UseColumnTextForButtonValue = true;
             // 
             // colTitle
             // 
