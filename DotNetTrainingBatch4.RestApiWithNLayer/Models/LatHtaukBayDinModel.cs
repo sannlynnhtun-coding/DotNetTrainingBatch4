@@ -1,9 +1,8 @@
-﻿namespace DotNetTrainingBatch4.RestApiWithNLayer.Models
+﻿namespace DotNetTrainingBatch4.RestApiWithNLayer.Models;
+
+public class LatHtaukBayDinModel
 {
-    public class LatHtaukBayDinModel
-    {
-        public QuestionModel[] questions { get; set; }
-        public AnswerModel[] answers { get; set; }
-        public string[] numberList { get; set; }
-    }
+    public QuestionModel[] questions { get; set; }
+    public AnswerModel[] answers { get; set; }
+    public string[] numberList { get; set; }
 }

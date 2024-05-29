@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.WinFormsApp.Models
+namespace DotNetTrainingBatch4.WinFormsApp.Models;
+
+internal enum EnumFormControlType
 {
-    internal enum EnumFormControlType
-    {
-        None = 0,
-        Edit = 1,
-        Delete = 2,
-        Create,
-        Confirm,
-    }
+    None = 0,
+    Edit = 1,
+    Delete = 2,
+    Create,
+    Confirm,
 }

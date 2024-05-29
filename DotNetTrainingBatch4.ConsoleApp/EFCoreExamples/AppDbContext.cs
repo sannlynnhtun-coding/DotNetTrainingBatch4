@@ -2,15 +2,14 @@
 using DotNetTrainingBatch4.ConsoleApp.Services;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotNetTrainingBatch4.ConsoleApp.EFCoreExamples
-{
-    internal class AppDbContext : DbContext
-    {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-        }
+namespace DotNetTrainingBatch4.ConsoleApp.EFCoreExamples;
 
-        public DbSet<BlogDto> Blogs { get; set; }
+internal class AppDbContext : DbContext
+{
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
     }
+
+    public DbSet<BlogDto> Blogs { get; set; }
 }

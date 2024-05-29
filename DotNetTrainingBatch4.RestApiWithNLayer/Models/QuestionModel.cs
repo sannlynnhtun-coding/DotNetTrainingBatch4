@@ -1,8 +1,7 @@
-﻿namespace DotNetTrainingBatch4.RestApiWithNLayer.Models
+﻿namespace DotNetTrainingBatch4.RestApiWithNLayer.Models;
+
+public class QuestionModel
 {
-    public class QuestionModel
-    {
-        public int questionNo { get; set; }
-        public string questionName { get; set; }
-    }
+    public int questionNo { get; set; }
+    public string questionName { get; set; }
 }
