@@ -163,8 +163,8 @@ function getBlogTable() {
         const htmlRow = `
         <tr>
             <td>
-                <button type="button" class="btn btn-warning" onclick="editBlog('${item.id}')">Edit</button>
-                <button type="button" class="btn btn-danger" onclick="deleteBlog('${item.id}')">Delete</button>
+                <button type="button" class="btn btn-warning" data-id="${item.id}" onclick="editBlog('${item.id}')">Edit</button>
+                <button type="button" class="btn btn-danger" data-blog-id="${item.id}" onclick="deleteBlog('${item.id}')">Delete</button>
             </td>
             <td>${++count}</td>
             <td>${item.title}</td>

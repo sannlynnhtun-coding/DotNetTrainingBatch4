@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fengyuanchen/datepicker@0.6.5/dist/datepicker.min.css"
+        integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous">
+</head>
+
+<body>
+    <input data-toggle="datepicker">
+    <textarea data-toggle="datepicker"></textarea>
+    <div data-toggle="datepicker"></div>
+
+    <label id="lbl" data-blog-id="heehee">Name</label>
+    <button type="button" data-blog-id="1" class="btnClick">Click</button>
+    <button type="button" data-blog-id="2" class="btnClick">Click</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fengyuanchen/datepicker@0.6.5/dist/datepicker.min.js"
+        integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+
+    <script>
+        // const id = $('#lbl').data('blog-id');
+        // console.log(id);
+        $('[data-toggle="datepicker"]').datepicker({
+            autoHide: true,
+            format: 'dd-mm-yyyy'
+        });
+        $('.btnClick').click(function(){
+            let id = $(this).data('blog-id');
+            console.log(id);
+        })
+    </script>
+</body>
+
+</html>
