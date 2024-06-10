@@ -8,6 +8,7 @@ internal static class ConnectionStrings
     {
         DataSource = ".",
         InitialCatalog = "DotNetTrainingBatch4",
+        //InitialCatalog = "TestDb",
         UserID = "sa",
         Password = "sasa@123",
         TrustServerCertificate = true

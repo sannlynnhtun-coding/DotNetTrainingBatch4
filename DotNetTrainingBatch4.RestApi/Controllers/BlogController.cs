@@ -6,11 +6,18 @@
 [ApiController]
 public class BlogController : ControllerBase
 {
+    //private readonly AppDbContext _context;
+
+    //public BlogController()
+    //{
+    //    _context = new AppDbContext();
+    //}
+
     private readonly AppDbContext _context;
 
-    public BlogController()
+    public BlogController(AppDbContext context)
     {
-        _context = new AppDbContext();
+        _context = context;
     }
 
     [HttpGet]
