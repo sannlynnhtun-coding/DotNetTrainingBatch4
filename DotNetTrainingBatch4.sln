@@ -33,11 +33,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.WinFor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.WinFormsAppSqlInjection", "DotNetTrainingBatch4.WinFormsAppSqlInjection\DotNetTrainingBatch4.WinFormsAppSqlInjection.csproj", "{0C74BCCB-94E4-4C72-8A6F-FD46391B5924}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.NLayer.UI", "DotNetTrainingBatch4.NLayer.UI\DotNetTrainingBatch4.NLayer.UI.csproj", "{8483A0BE-BA46-4327-9557-4546C5AF233C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.NLayer.UI", "DotNetTrainingBatch4.NLayer.UI\DotNetTrainingBatch4.NLayer.UI.csproj", "{8483A0BE-BA46-4327-9557-4546C5AF233C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.NLayer.BusinessLogic", "DotNetTrainingBatch4.NLayer.BusinessLogic\DotNetTrainingBatch4.NLayer.BusinessLogic.csproj", "{4F2363A8-AF9C-4F2A-94F7-ED3DBF9E6936}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.NLayer.BusinessLogic", "DotNetTrainingBatch4.NLayer.BusinessLogic\DotNetTrainingBatch4.NLayer.BusinessLogic.csproj", "{4F2363A8-AF9C-4F2A-94F7-ED3DBF9E6936}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.NLayer.DataAccess", "DotNetTrainingBatch4.NLayer.DataAccess\DotNetTrainingBatch4.NLayer.DataAccess.csproj", "{F63C556E-FF0A-4CC8-B6CA-21BFE6FD017A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.NLayer.DataAccess", "DotNetTrainingBatch4.NLayer.DataAccess\DotNetTrainingBatch4.NLayer.DataAccess.csproj", "{F63C556E-FF0A-4CC8-B6CA-21BFE6FD017A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.MinimalApi", "DotNetTrainingBatch4.MinimalApi\DotNetTrainingBatch4.MinimalApi.csproj", "{351EE8A0-43C7-4AD2-B56D-E53DCFE9EAF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,10 @@ Global
 		{F63C556E-FF0A-4CC8-B6CA-21BFE6FD017A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F63C556E-FF0A-4CC8-B6CA-21BFE6FD017A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F63C556E-FF0A-4CC8-B6CA-21BFE6FD017A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351EE8A0-43C7-4AD2-B56D-E53DCFE9EAF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351EE8A0-43C7-4AD2-B56D-E53DCFE9EAF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351EE8A0-43C7-4AD2-B56D-E53DCFE9EAF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351EE8A0-43C7-4AD2-B56D-E53DCFE9EAF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
