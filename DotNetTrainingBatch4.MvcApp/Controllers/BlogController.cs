@@ -34,6 +34,7 @@ namespace DotNetTrainingBatch4.MvcApp.Controllers
             var result = await _db.SaveChangesAsync();
             //return View("BlogCreate");
             return Redirect("/Blog");
+            //return RedirectToAction("Index", "Blog");
         }
     }
 }
