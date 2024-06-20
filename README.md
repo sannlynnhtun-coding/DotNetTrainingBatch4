@@ -56,3 +56,36 @@ Controller
 Controller => Processing => View(Model == Dto) => UI (cshtml)
 
 https://localhost:3000/Home/Index
+
+Submit
+
+---
+
+AsNoTracking
+
+---
+
+Ajax
+
+---
+
+ViewBag, ViewData, TempData, Session 
+
+---
+
+Dependency Inject with Order
+
+---
+
+
+1
+2
+3 - update 8
+4 - update 9
+5
+6 x
+7 x
+
+Commit / Uncommit
+
+select * from Tbl_Blog with (nolock)
