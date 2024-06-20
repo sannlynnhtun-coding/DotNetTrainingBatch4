@@ -16,7 +16,12 @@ namespace DotNetTrainingBatch4.MvcApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var lst = await _db.Blogs.ToListAsync();
+            // select * from Tbl_Blog with (nolock)
+
+            var lst = await _db.Blogs
+                .AsNoTracking()
+                .OrderByDescending(x => x.BlogId)
+                .ToListAsync();
             return View(lst);
         }
 
@@ -35,6 +40,57 @@ namespace DotNetTrainingBatch4.MvcApp.Controllers
             //return View("BlogCreate");
             return Redirect("/Blog");
             //return RedirectToAction("Index", "Blog");
+        }
+
+        [HttpGet]
+        [ActionName("Edit")]
+        public async Task<IActionResult> BlogEdit(int id)
+        {
+            var item = await _db.Blogs.FirstOrDefaultAsync(x => x.BlogId == id);
+            if (item is null)
+            {
+                return Redirect("/Blog");
+            }
+
+            return View("BlogEdit", item);
+        }
+
+        [HttpPost]
+        [ActionName("Update")]
+        public async Task<IActionResult> BlogUpdate(int id, BlogModel blog)
+        {
+            var item = await _db.Blogs
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.BlogId == id);
+            if (item is null)
+            {
+                return Redirect("/Blog");
+            }
+
+            item.BlogTitle = blog.BlogTitle;
+            item.BlogAuthor = blog.BlogAuthor;
+            item.BlogContent = blog.BlogContent;
+
+            _db.Entry(item).State = EntityState.Modified;
+
+            await _db.SaveChangesAsync();
+            return Redirect("/Blog");
+        }
+
+        [HttpGet]
+        [ActionName("Delete")]
+        public async Task<IActionResult> BlogDelete(int id)
+        {
+            var item = await _db.Blogs.FirstOrDefaultAsync(x => x.BlogId == id);
+            if (item is null)
+            {
+                return Redirect("/Blog");
+            }
+
+            _db.Blogs.Remove(item);
+            await _db.SaveChangesAsync();
+
+            return Redirect("/Blog");
         }
     }
 }

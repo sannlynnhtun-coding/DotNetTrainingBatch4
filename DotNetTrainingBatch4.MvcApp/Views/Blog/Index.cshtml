@@ -12,16 +12,25 @@
 <table class="table table-responsive">
     <thead>
         <tr>
-            <td>No.</td>
-            <td>Title</td>
-            <td>Author</td>
-            <td>Content</td>
+            <th></th>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Content</th>
         </tr>
     </thead>
     <tbody>
         @foreach (BlogModel item in Model)
         {
             <tr>
+                <td>
+                    <a class="btn btn-warning" href="/Blog/Edit/@item.BlogId">
+                        Edit
+                    </a>
+                    <a class="btn btn-danger" href="/Blog/Delete/@item.BlogId">
+                        Delete
+                    </a>
+                </td>
                 <td>@(++count)</td>
                 <td>@item.BlogTitle</td>
                 <td>@item.BlogAuthor</td>
