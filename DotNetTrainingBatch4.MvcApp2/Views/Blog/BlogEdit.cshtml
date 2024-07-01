@@ -1,0 +1,58 @@
+﻿@model BlogModel
+<h2>Edit Blog</h2>
+
+<div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" class="form-control" id="BlogTitle" value="@Model.BlogTitle">
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Author</label>
+    <input type="text" class="form-control" id="BlogAuthor" value="@Model.BlogAuthor">
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Content</label>
+    <input type="text" class="form-control" id="BlogContent" value="@Model.BlogContent">
+</div>
+
+
+<a href="/Blog" class="btn btn-dark">Back</a>
+<button type="button" id="btnUpdate" class="btn btn-success">Update</button>
+
+@section scripts {
+    <script>
+        $('#btnUpdate').click(function () {
+            const title = $('#BlogTitle').val();
+            const author = $('#BlogAuthor').val();
+            const content = $('#BlogContent').val();
+
+            const _reqModel = {
+                BlogTitle: title,
+                BlogAuthor: author,
+                BlogContent: content
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/Blog/Update/@Model.BlogId',
+                data: { blog: _reqModel },
+                dataType: "JSON",
+                success: function (result) {
+                    // console.log(result);
+                    const message = result.Message;
+                    if (!result.IsSuccess) {
+                        alert(message);
+                        return;
+                    }
+
+                    alert(message);
+                    location.href = "/Blog/Index";
+                },
+                error: function (xhr, status, error) {
+                    console.log({ xhr, status, error })
+                }
+            });
+        })
+    </script>
+}
