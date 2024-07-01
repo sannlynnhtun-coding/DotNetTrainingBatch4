@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.Minima
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.MvcApp", "DotNetTrainingBatch4.MvcApp\DotNetTrainingBatch4.MvcApp.csproj", "{19D904A8-2CA2-46DB-AC2F-4577DEEE4555}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.MvcApp2", "DotNetTrainingBatch4.MvcApp2\DotNetTrainingBatch4.MvcApp2.csproj", "{045222BE-2DEB-4586-A119-B3841BCA5F72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{19D904A8-2CA2-46DB-AC2F-4577DEEE4555}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19D904A8-2CA2-46DB-AC2F-4577DEEE4555}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19D904A8-2CA2-46DB-AC2F-4577DEEE4555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{045222BE-2DEB-4586-A119-B3841BCA5F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{045222BE-2DEB-4586-A119-B3841BCA5F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{045222BE-2DEB-4586-A119-B3841BCA5F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{045222BE-2DEB-4586-A119-B3841BCA5F72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
