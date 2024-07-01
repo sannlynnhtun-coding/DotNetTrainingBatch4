@@ -1,0 +1,75 @@
+﻿@model List<BlogModel>
+@{
+    ViewData["Title"] = "Blog";
+    int count = 0;
+}
+<h2>Blog List</h2>
+
+@* <span>@Model.Count</span> *@
+
+<a href="/Blog/Create" class="btn btn-success">New</a>
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th></th>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (BlogModel item in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-warning" href="/Blog/Edit/@item.BlogId">
+                        Edit
+                    </a>
+                    <button type="button" class="btn btn-danger btn-delete" data-blog-id="@item.BlogId">
+                        Delete
+                    </button>
+                </td>
+                <td>@(++count)</td>
+                <td>@item.BlogTitle</td>
+                <td>@item.BlogAuthor</td>
+                <td>@item.BlogContent</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+    <script>
+        $('.btn-delete').click(function () {
+            const isConfirm = confirm("Are you sure want to delete?");
+            if (!isConfirm) return;
+
+            const id = $(this).data('blog-id');
+            const _reqModel = {
+                BlogId: id
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/Blog/Delete',
+                data: { blog: _reqModel },
+                dataType: "JSON",
+                success: function (result) {
+                    // console.log(result);
+                    const message = result.Message;
+                    if (!result.IsSuccess) {
+                        alert(message);
+                        return;
+                    }
+
+                    alert(message);
+                    location.href = "/Blog/Index";
+                },
+                error: function (xhr, status, error) {
+                    console.log({ xhr, status, error })
+                }
+            });
+        })
+    </script>
+}
