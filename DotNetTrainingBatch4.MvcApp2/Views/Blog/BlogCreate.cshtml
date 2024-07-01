@@ -1,0 +1,64 @@
+﻿<h2>New Blog</h2>
+
+<div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" class="form-control" id="BlogTitle">
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Author</label>
+    <input type="text" class="form-control" id="BlogAuthor">
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Content</label>
+    <input type="text" class="form-control" id="BlogContent">
+</div>
+
+
+<a href="/Blog" class="btn btn-dark">Back</a>
+<button type="button" id="btnSave" class="btn btn-success">Save</button>
+@section scripts {
+    <script>
+        $('#btnSave').click(function(){
+            const title = $('#BlogTitle').val();
+            const author = $('#BlogAuthor').val();
+            const content = $('#BlogContent').val();
+
+            const _reqModel = {
+                BlogTitle: title,
+                BlogAuthor: author,
+                BlogContent: content
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/Blog/Save',
+                data: { blog: _reqModel },
+                dataType: "JSON",
+                success: function (result) {
+                    // console.log(result);
+                    const message = result.Message;
+                    if(!result.IsSuccess){
+                        alert(message);
+                        return;
+                    }
+
+                    alert(message);
+                    location.href = "/Blog/Index";
+                },
+                error: function (xhr, status, error) {
+                    console.log({xhr, status, error})
+                }
+            });
+        })
+    </script>
+}
+
+@section css {
+    <style>
+       /*  body {
+            background: red;
+        } */
+    </style>
+}
