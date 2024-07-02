@@ -13,5 +13,13 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
 
             return View(model);
         }
+
+        public IActionResult PolarAreaChart() 
+        { 
+            PolarAreaChartModel polarAreaChartModel = new PolarAreaChartModel();
+            polarAreaChartModel.Series = new List<int> { 14, 23, 21, 17, 15, 10, 12, 17, 21 };
+
+            return View(polarAreaChartModel);
+        }
     }
 }
