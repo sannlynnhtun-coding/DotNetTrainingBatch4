@@ -1,0 +1,50 @@
+﻿@model BasicLineChartModel
+
+<div id="chart" data-product-name="@Model.ProductName"></div>
+
+@section scripts{
+    <script>
+        const chartElement = document.querySelector("#chart");
+        // const _productName = "@Model.ProductName";
+        const _productName = chartElement.getAttribute("data-product-name");
+        const _data = @JsonConvert.SerializeObject(Model.Datas);
+        const _categories = @Html.Raw(JsonConvert.SerializeObject(Model.Categories));
+
+        var options = {
+            series: [{
+                name: _productName,
+                data: _data
+            }],
+            chart: {
+                height: 350,
+                type: 'line',
+                zoom: {
+                    enabled: false
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'straight'
+            },
+            title: {
+                text: 'Product Trends by Month',
+                align: 'left'
+            },
+            grid: {
+                row: {
+                    colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+                    opacity: 0.5
+                },
+            },
+            xaxis: {
+                categories: _categories,
+            }
+        };
+
+        var chart = new ApexCharts(chartElement, options);
+        chart.render();
+    </script>
+}
+

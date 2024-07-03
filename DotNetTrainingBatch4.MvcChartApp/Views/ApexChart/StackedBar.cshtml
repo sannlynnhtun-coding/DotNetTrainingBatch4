@@ -1,0 +1,71 @@
+﻿@model BarChartModel;
+
+<div id="chart"></div>
+
+@section scripts {
+    <script>
+        const _series = @Html.Raw(JsonConvert.SerializeObject(Model.Series));
+        const _categories = @Html.Raw(JsonConvert.SerializeObject(Model.Categories));
+        var options = {
+            series: _series,
+            chart: {
+                type: 'bar',
+                height: 350,
+                stacked: true,
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: true,
+                    dataLabels: {
+                        total: {
+                            enabled: true,
+                            offsetX: 0,
+                            style: {
+                                fontSize: '13px',
+                                fontWeight: 900
+                            }
+                        }
+                    }
+                },
+            },
+            stroke: {
+                width: 1,
+                colors: ['#fff']
+            },
+            title: {
+                text: 'Fiction Books Sales'
+            },
+            xaxis: {
+                categories: _categories,
+                labels: {
+                    formatter: function (val) {
+                        return val + "K"
+                    }
+                }
+            },
+            yaxis: {
+                title: {
+                    text: undefined
+                },
+            },
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        return val + "K"
+                    }
+                }
+            },
+            fill: {
+                opacity: 1
+            },
+            legend: {
+                position: 'top',
+                horizontalAlign: 'left',
+                offsetX: 40
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    </script>
+}
