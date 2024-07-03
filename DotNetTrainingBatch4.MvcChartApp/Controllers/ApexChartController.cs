@@ -263,5 +263,24 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
 
             return View(respondModel);
         }
+
+        public IActionResult StackedBarChart()
+        {
+            var seriesData = new List<StackedBarSeries>
+            {
+                new StackedBarSeries { name = "Marine Sprite", data = new List<int> { 44, 55, 41, 37, 22, 43, 21 } },
+                new StackedBarSeries { name = "Striking Calf", data = new List<int> { 53, 32, 33, 52, 13, 43, 32 } },
+                new StackedBarSeries { name = "Tank Picture", data = new List<int> { 12, 17, 11, 9, 15, 11, 20 } },
+                new StackedBarSeries { name = "Bucket Slope", data = new List<int> { 9, 7, 5, 8, 6, 9, 4 } },
+                new StackedBarSeries { name = "Reborn Kid", data = new List<int> { 25, 12, 19, 32, 25, 24, 10 } }
+            };
+
+            var model = new StackedBarChartModel
+            {
+                Series = seriesData,
+                Categories = new List<int> { 2008, 2009, 2010, 2011, 2012, 2013, 2014 }
+            };
+            return View(model);
+        }
     }
 }
