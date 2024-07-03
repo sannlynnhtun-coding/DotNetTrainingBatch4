@@ -14,6 +14,46 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(model);
         }
 
+        public IActionResult BasicSlopeChart()
+        {
+            BasicSlopeChartModel model = new BasicSlopeChartModel
+            {
+                Categories = new List<string> { "Jan", "Feb" },
+                Series = new List<SeriesData>
+                {
+                    new SeriesData
+                    {
+                        Name = "Blue",
+                        Data = new List<DataPoint>
+                        {
+                            new DataPoint { Jan = "Jan", Feb = 43 },
+                            new DataPoint { Jan = "Feb", Feb = 58 }
+                        }
+                    },
+                    new SeriesData
+                    {
+                        Name = "Green",
+                        Data = new List<DataPoint>
+                        {
+                            new DataPoint { Jan = "Jan", Feb = 33 },
+                            new DataPoint { Jan = "Feb", Feb = 38 }
+                        }
+                    },
+                    new SeriesData
+                    {
+                        Name = "Red",
+                        Data = new List<DataPoint>
+                        {
+                            new DataPoint { Jan = "Jan", Feb = 55 },
+                            new DataPoint { Jan= "Feb", Feb = 21 }
+                        }
+                    }
+                }
+            };
+
+            return View(model);
+        }
+
         public IActionResult LineColumnArea()
         {
             LineColumnAreaModel model = new LineColumnAreaModel
