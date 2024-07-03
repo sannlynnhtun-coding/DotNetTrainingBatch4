@@ -1,0 +1,47 @@
+﻿@model MixedLineColumnChartModel
+
+<div id="chart" style="min-height: 365px"></div>
+
+@section scripts
+{
+    <script>
+
+        var options = {
+            series: @Html.Raw(JsonConvert.SerializeObject(Model.Series)),
+            chart: {
+                height: 350,
+                type: 'line',
+            },
+            stroke: {
+                width: [0, 4]
+            },
+            title: {
+                text: @Html.Raw(JsonConvert.SerializeObject(Model.Title))
+            },
+            dataLabels: {
+                enabled: true,
+                enabledOnSeries: [1]
+            },
+            labels: @Html.Raw(JsonConvert.SerializeObject(Model.Labels)),
+            xaxis: {
+                type: 'datetime'
+            },
+            yaxis: [{
+                title: {
+                    text: 'Website Blog',
+                },
+
+            }, {
+                opposite: true,
+                title: {
+                    text: 'Social Media'
+                }
+            }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
+
+    </script>
+}
