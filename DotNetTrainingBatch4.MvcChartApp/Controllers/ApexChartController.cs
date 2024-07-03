@@ -29,7 +29,7 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
 
             return View(model);
         }
-        
+
         public IActionResult MultiSeriesTimelineChart()
         {
             var responseList = new List<MultiSeriesTimelineChartModel>
@@ -56,12 +56,12 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
         };
             return View(responseList);
         }
-        
+
         public IActionResult StesplineChart()
         {
             SteplineChartModel model = new SteplineChartModel();
             model.Data = new List<int>() { 34, 44, 54, 21, 12, 43, 33, 23, 66, 66, 58 };
-            return View("SteplineChart",model);
+            return View("SteplineChart", model);
         }
 
         public IActionResult BasicColumnChart()
@@ -204,12 +204,13 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             model.Categories = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" };
             return View(model);
         }
-        
-        public IActionResult LineWithDataLabelsChart() { 
+
+        public IActionResult LineWithDataLabelsChart()
+        {
 
             LineWithDataLabelsChartModel FirstDataModel = new LineWithDataLabelsChartModel();
             FirstDataModel.Name = "High - 2013";
-            FirstDataModel.dataList = new List<int> { 28, 29, 33, 36, 32, 32, 33};
+            FirstDataModel.dataList = new List<int> { 28, 29, 33, 36, 32, 32, 33 };
 
             LineWithDataLabelsChartModel SecondDataModel = new LineWithDataLabelsChartModel();
             SecondDataModel.Name = "Low - 2013";
@@ -220,6 +221,32 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             respondModel.SecondRecord = SecondDataModel;
 
             return View(respondModel);
+        }
+
+        public IActionResult PyramidChart()
+        {
+            PyramidChartModel model = new PyramidChartModel()
+            {
+                Series = new List<PyramidChartSeriesData>()
+                {
+                    new PyramidChartSeriesData()
+                    {
+                        name="",
+                        data=new List<int>(){200, 330, 548, 740, 880, 990, 1100, 1380 },
+                    }
+                },
+                Colors = new List<string>()
+                {
+                    "#F44F5E","#E55A89","#D863B1","#CA6CD8","#B57BED",
+                    "#8D95EB","#62ACEA","#4BC3E6"
+                },
+                Categories=new List<string>()
+                {
+                    "Sweets", "Processed Foods", "Healthy Fats", "Meat", "Beans & Legumes", "Dairy", "Fruits & Vegetables", "Grains"
+                }
+            };
+
+            return View(model);
         }
     }
 }
