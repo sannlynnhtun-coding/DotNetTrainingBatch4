@@ -71,51 +71,6 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
 
             return View(model);
         }
-
-        public IActionResult StackedColumns()
-        {
-            StackedColumnModel model = new StackedColumnModel();
-            model.Series = new List<Series>()
-            {
-                new Series
-                {
-                    Name = "Product A",
-                    Data = new List<int> { 44, 55, 41, 67, 22, 43 }
-                },
-                new Series
-                {
-                    Name = "Product B",
-                    Data = new List<int> { 13, 23, 20, 8, 13, 27 }
-                },
-                new Series
-                {
-                    Name = "Product C",
-                    Data = new List<int> { 11, 17, 15, 15, 21, 14 }
-                }
-            };
-            model.Categories = new List<string>() { "01/01/2011 GMT", "01/02/2011 GMT", "01/03/2011 GMT", "01/04/2011 GMT",
-                    "01/05/2011 GMT", "01/06/2011 GMT"};
-
-            return View(model);
-        }
-
-        public IActionResult StackedBar()
-        {
-            var seriesData = new List<SeriesData>
-            {
-                new SeriesData { name = "Marine Sprite", data = new List<int> { 44, 55, 41, 37, 22, 43, 21 } },
-                new SeriesData { name = "Striking Calf", data = new List<int> { 53, 32, 33, 52, 13, 43, 32 } },
-                new SeriesData { name = "Tank Picture", data = new List<int> { 12, 17, 11, 9, 15, 11, 20 } },
-                new SeriesData { name = "Bucket Slope", data = new List<int> { 9, 7, 5, 8, 6, 9, 4 } },
-                new SeriesData { name = "Reborn Kid", data = new List<int> { 25, 12, 19, 32, 25, 24, 10 } }
-            };
-
-            var model = new BarChartModel
-            {
-                Series = seriesData,
-                Categories = new List<int> { 2008, 2009, 2010, 2011, 2012, 2013, 2014 }
-            }
-        }
         
         public IActionResult MultiSeriesTimelineChart()
         {
@@ -144,49 +99,11 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(responseList);
         }
         
-        public IActionResult RadialBarCustomAngleCircleChart() 
-        {
-            RadialBarCustomAngleCircleChartModel model = new RadialBarCustomAngleCircleChartModel();
-            model.Series = new List<int> { 76, 67, 61, 90 };
-            model.Labels = new List<string> { "Vimeo", "Messenger", "Facebook", "LinkedIn" };
-            model.Colors = new List<string> { "#1ab7ea", "#0084ff", "#39539E", "#0077B5" };
-        }
-        
-        public IActionResult SPLineChart()
-        {
-            SPLineChartModel model = new SPLineChartModel();
-            model.Series1 = new List<int>() { 31, 40, 28, 51, 42, 109, 100 };
-            model.Series2 = new List<int>() { 11, 32, 45, 32, 34, 52, 41 };
-            model.Categories = new List<string>() { "2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z" };
-            return View(model);
-        }
-
-        [ActionName("Stepline")]
-        public IActionResult SteplineChart()
+        public IActionResult StesplineChart()
         {
             SteplineChartModel model = new SteplineChartModel();
             model.Data = new List<int>() { 34, 44, 54, 21, 12, 43, 33, 23, 66, 66, 58 };
             return View("SteplineChart",model);
-        }
-        
-        public IActionResult BarChart()
-        {
-            BarChartModel model = new BarChartModel();
-            model.Labels = new List<string>()
-            {
-                "South Korea",
-                "Canada",
-                "United Kingdom",
-                "Netherlands",
-                "Italy",
-                "France",
-                "Japan",
-                "United States",
-                "China",
-                "Germany"
-            };
-            model.Series = new List<int> { 400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380 };
-            return View(model);
         }
 
         public IActionResult BasicColumnChart()
@@ -202,14 +119,6 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(model);
         }
 
-        public IActionResult PolarAreaChart() 
-        { 
-            PolarAreaChartModel polarAreaChartModel = new PolarAreaChartModel();
-            polarAreaChartModel.Series = new List<int> { 14, 23, 21, 17, 15, 10, 12, 17, 21 };
-
-            return View(polarAreaChartModel);
-        }
-        
         public IActionResult ColumnChartWithDataLables()
         {
             ColumnChartWithDataLablesModel model = new ColumnChartWithDataLablesModel();
