@@ -3,11 +3,11 @@
     public class MixedLineColumnChartModel
     {
         public string Title { get; set; }
-        public List<Serie> Series { get; set; }
+        public List<LineColumnChartSerie> Series { get; set; }
         public List<string> Labels { get; set; }
     }
 
-    public class Serie
+    public class LineColumnChartSerie
     {
         public string? name { get; set; }
         public string? type { get; set; }
