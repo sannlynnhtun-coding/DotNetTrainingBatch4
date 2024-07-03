@@ -1,0 +1,54 @@
+﻿@model SPLineChartModel
+
+<div id="chart"></div>
+
+@section scripts{
+    <script>
+        const _series1 = @JsonConvert.SerializeObject(Model.Series1);
+        const _series2 = @JsonConvert.SerializeObject(Model.Series2);
+        const _categories = @Html.Raw(JsonConvert.SerializeObject(Model.Categories));     
+        var options = {
+            series: [{
+                name: 'series1',
+                data: _series1
+            }, {
+                name: 'series2',
+                data:_series2
+            }],
+            chart: {
+                height: 350,
+                type: 'area'
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'datetime',
+                categories: _categories
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
+
+    </script>
+}
+
+@section css{
+    <style>
+
+        #chart {
+            max-width: 650px;
+            margin: 35px auto;
+        }
+    </style>
+}
