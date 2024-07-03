@@ -14,6 +14,14 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(model);
         }
 
+        [ActionName("Stepline")]
+        public IActionResult SteplineChart()
+        {
+            SteplineChartModel model = new SteplineChartModel();
+            model.Data = new List<int>() { 34, 44, 54, 21, 12, 43, 33, 23, 66, 66, 58 };
+            return View("SteplineChart",model);
+        }
+        
         public IActionResult BarChart()
         {
             BarChartModel model = new BarChartModel();
