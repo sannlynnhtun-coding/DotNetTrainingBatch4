@@ -282,5 +282,33 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             };
             return View(model);
         }
+
+        public IActionResult StackedColumns()
+        {
+            StackedColumnModel model = new StackedColumnModel();
+            model.Series = new List<Group>()
+            {
+                new Group
+                {
+                    Name = "Product A",
+                    Data = new List<int> { 44, 55, 41, 67, 22, 43 }
+                },
+                new Group
+                {
+                    Name = "Product B",
+                    Data = new List<int> { 13, 23, 20, 8, 13, 27 }
+                },
+                new Group
+                {
+                    Name = "Product C",
+                    Data = new List<int> { 11, 17, 15, 15, 21, 14 }
+                }
+            };
+            model.Categories = new List<string>() { "01/01/2011 GMT", "01/02/2011 GMT", "01/03/2011 GMT", "01/04/2011 GMT",
+                    "01/05/2011 GMT", "01/06/2011 GMT"};
+
+            return View(model);
+        }
+
     }
 }
