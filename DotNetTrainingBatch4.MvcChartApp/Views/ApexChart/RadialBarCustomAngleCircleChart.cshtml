@@ -2,9 +2,9 @@
 <div id="chart"></div>
 @section scripts {
     <script>
-        const _series = @JsonConvert.SerializeObject(Model.Series);
-        const _labels = @Html.Raw(JsonConvert.SerializeObject(Model.Labels));
-        const _colors = @Html.Raw(JsonConvert.SerializeObject(Model.Colors));
+        const _series = @JsonConvert.SerializeObject(Model.RadialBarSeries);
+        const _labels = @Html.Raw(JsonConvert.SerializeObject(Model.RadialBarLabels));
+        const _colors = @Html.Raw(JsonConvert.SerializeObject(Model.RadialBarColors));
 
         var options = {
             series: _series,
