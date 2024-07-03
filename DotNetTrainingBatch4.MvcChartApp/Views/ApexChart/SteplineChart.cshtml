@@ -1,0 +1,37 @@
+﻿@model SteplineChartModel
+
+<div id="chart"></div>
+
+@section scripts {
+    <script>
+        const _data = @Html.Raw(JsonConvert.SerializeObject(Model.Data));
+
+        var options = {
+            series: [{
+                data: _data
+            }],
+            chart: {
+                type: 'line',
+                height: 350
+            },
+            stroke: {
+                curve: 'stepline',
+            },
+            dataLabels: {
+                enabled: false
+            },
+            title: {
+                text: 'Stepline Chart',
+                align: 'left'
+            },
+            markers: {
+                hover: {
+                    sizeOffset: 4
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    </script>
+}
