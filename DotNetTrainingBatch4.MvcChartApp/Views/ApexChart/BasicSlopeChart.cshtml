@@ -1,0 +1,55 @@
+﻿@model BasicSlopeChartModel
+
+@{
+    ViewData["Title"] = "Basic Slope Chart";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div id="chart"></div>
+
+@section scripts {
+    <script>
+        const _categories = @Html.Raw(JsonConvert.SerializeObject(Model.Categories));
+        const _seriesData = @Html.Raw(JsonConvert.SerializeObject(Model.Series));
+
+        const _series = _seriesData.map(s => {
+            return {
+                name: s.Name,
+                data: s.Data.map(d => {
+                    return { x: d.Jan, y: d.Feb };
+                })
+            };
+        });
+
+        var options = {
+            series: _series,
+            chart: {
+                height: 350,
+                width: 400,
+                type: 'line',
+            },
+            plotOptions: {
+                line: {
+                    isSlopeChart: true,
+                },
+            },
+            xaxis: {
+                categories: _categories,
+                type: 'category'
+            },
+            yaxis: {
+                title: {
+                    text: 'Values'
+                }
+            },
+            title: {
+                text: 'Monthly Data',
+                align: 'left'
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    </script>
+}
