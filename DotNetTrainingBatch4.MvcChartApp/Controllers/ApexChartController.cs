@@ -14,46 +14,6 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(model);
         }
 
-        public IActionResult MixedLineColumnChart()
-        {
-            MixedLineColumnChartModel model = new MixedLineColumnChartModel();
-            model.Title = "Traffic Sources";
-            model.Series = new List<Serie>();
-
-            Serie column = new Serie
-            {
-                name = "Website Blog",
-                type = "column",
-                data = new List<int> { 440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160 }
-            };
-
-            Serie line = new Serie
-            {
-                name = "Social Media",
-                type = "line",
-                data = new List<int> { 23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16 }
-            };
-
-            model.Series.Add(column);
-            model.Series.Add(line);
-
-            model.Labels = new List<string>()
-            {
-                "01 June 2024",
-                "02 June 2024",
-                "03 June 2024",
-                "04 June 2024",
-                "05 June 2024",
-                "06 June 2024",
-                "07 June 2024",
-                "08 June 2024",
-                "09 June 2024",
-                "10 June 2024",
-                "11 June 2024",
-                "12 June 2024"
-            }
-        }
-
         public IActionResult GroupedBar()
         {
             GroupBarModel model = new GroupBarModel();
@@ -96,24 +56,6 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
 
             return View(model);
         }
-
-        public IActionResult StackedBar()
-        {
-            var seriesData = new List<SeriesData>
-            {
-                new SeriesData { name = "Marine Sprite", data = new List<int> { 44, 55, 41, 37, 22, 43, 21 } },
-                new SeriesData { name = "Striking Calf", data = new List<int> { 53, 32, 33, 52, 13, 43, 32 } },
-                new SeriesData { name = "Tank Picture", data = new List<int> { 12, 17, 11, 9, 15, 11, 20 } },
-                new SeriesData { name = "Bucket Slope", data = new List<int> { 9, 7, 5, 8, 6, 9, 4 } },
-                new SeriesData { name = "Reborn Kid", data = new List<int> { 25, 12, 19, 32, 25, 24, 10 } }
-            };
-
-            var model = new BarChartModel
-            {
-                Series = seriesData,
-                Categories = new List<int> { 2008, 2009, 2010, 2011, 2012, 2013, 2014 }
-            }
-        }
         
         public IActionResult MultiSeriesTimelineChart()
         {
@@ -142,14 +84,6 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(responseList);
         }
         
-        public IActionResult RadialBarCustomAngleCircleChart() 
-        {
-            RadialBarCustomAngleCircleChartModel model = new RadialBarCustomAngleCircleChartModel();
-            model.Series = new List<int> { 76, 67, 61, 90 };
-            model.Labels = new List<string> { "Vimeo", "Messenger", "Facebook", "LinkedIn" };
-            model.Colors = new List<string> { "#1ab7ea", "#0084ff", "#39539E", "#0077B5" };
-        }
-        
         public IActionResult SPLineChart()
         {
             SPLineChartModel model = new SPLineChartModel();
@@ -159,8 +93,7 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(model);
         }
 
-        [ActionName("Stepline")]
-        public IActionResult SteplineChart()
+        public IActionResult StesplineChart()
         {
             SteplineChartModel model = new SteplineChartModel();
             model.Data = new List<int>() { 34, 44, 54, 21, 12, 43, 33, 23, 66, 66, 58 };
