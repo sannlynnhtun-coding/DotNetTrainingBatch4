@@ -14,6 +14,22 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(model);
         }
 
+        public IActionResult GroupedBar()
+        {
+            GroupBarModel model = new GroupBarModel();
+
+            GroupBar firstBar = new GroupBar();
+            firstBar.data = new List<int> { 44, 55, 41, 64, 22, 43, 21 };
+
+            GroupBar secBar = new GroupBar();
+            secBar.data = new List<int> { 53, 32, 33, 52, 13, 44, 32 };
+
+            model.BarGroup = new List<GroupBar> { firstBar, secBar };
+            model.Categories = new List<int> { 2001, 2002, 2003, 2004, 2005, 2006, 2007 };
+
+            return View(model);
+        }
+
         public IActionResult StackedColumns()
         {
             StackedColumnModel model = new StackedColumnModel();
