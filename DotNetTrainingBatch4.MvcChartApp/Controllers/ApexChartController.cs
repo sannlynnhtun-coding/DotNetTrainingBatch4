@@ -14,6 +14,14 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(model);
         }
 
+        public IActionResult RadialBarCustomAngleCircleChart() 
+        {
+            RadialBarCustomAngleCircleChartModel model = new RadialBarCustomAngleCircleChartModel();
+            model.Series = new List<int> { 76, 67, 61, 90 };
+            model.Labels = new List<string> { "Vimeo", "Messenger", "Facebook", "LinkedIn" };
+            model.Colors = new List<string> { "#1ab7ea", "#0084ff", "#39539E", "#0077B5" };
+        }
+        
         public IActionResult SPLineChart()
         {
             SPLineChartModel model = new SPLineChartModel();
@@ -61,7 +69,6 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
                 new Series { Name = "Free Cash Flow", Data = new List<int> { 35, 41, 36, 26, 45, 48, 52, 53, 41 } }
             };
             model.Categories = new List<string> { "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct" };
-
             return View(model);
         }
 
