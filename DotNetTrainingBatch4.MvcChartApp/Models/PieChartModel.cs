@@ -12,4 +12,9 @@
         public List<int> Series2 { get; set; }
         public List<string> Categories { get; set; }
     }
+   
+    public class PolarAreaChartModel
+    {
+        public List<int> Series { get; set; }
+    }
 }
