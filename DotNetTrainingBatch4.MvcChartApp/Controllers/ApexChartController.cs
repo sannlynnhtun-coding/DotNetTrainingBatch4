@@ -18,16 +18,16 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
         {
             MixedLineColumnChartModel model = new MixedLineColumnChartModel();
             model.Title = "Traffic Sources";
-            model.Series = new List<Serie>();
+            model.Series = new List<LineColumnChartSerie>();
 
-            Serie column = new Serie
+            LineColumnChartSerie column = new LineColumnChartSerie
             {
                 name = "Website Blog",
                 type = "column",
                 data = new List<int> { 440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160 }
             };
 
-            Serie line = new Serie
+            LineColumnChartSerie line = new LineColumnChartSerie
             {
                 name = "Social Media",
                 type = "line",
@@ -51,7 +51,9 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
                 "10 June 2024",
                 "11 June 2024",
                 "12 June 2024"
-            }
+            };
+
+            return View(model);
         }
 
         public IActionResult GroupedBar()
