@@ -2,11 +2,11 @@
 {
     public class RadialBarCustomAngleCircleChartModel
     {
-        public List<int> Series { get; set; }
+        public List<int> RadialBarSeries { get; set; }
 
-        public List<string> Labels { get; set; }
+        public List<string> RadialBarLabels { get; set; }
 
-        public List<string> Colors { get; set; }
+        public List<string> RadialBarColors { get; set; }
     }
 }
 
