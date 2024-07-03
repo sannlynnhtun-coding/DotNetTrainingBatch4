@@ -1,4 +1,4 @@
-﻿using DotNetTrainingBatch4.MvcChartApp.Models;
+using DotNetTrainingBatch4.MvcChartApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetTrainingBatch4.MvcChartApp.Controllers
@@ -10,6 +10,48 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             PieChartModel model = new PieChartModel();
             model.Lables = new List<string>() { "Team A", "Team B", "Team C", "Team D", "Team E" };
             model.Series = new List<int> { 44, 55, 13, 43, 22 };
+
+            return View(model);
+        }
+
+        public IActionResult MixedLineColumnChart()
+        {
+            MixedLineColumnChartModel model = new MixedLineColumnChartModel();
+            model.Title = "Traffic Sources";
+            model.Series = new List<LineColumnChartSerie>();
+
+            LineColumnChartSerie column = new LineColumnChartSerie
+            {
+                name = "Website Blog",
+                type = "column",
+                data = new List<int> { 440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160 }
+            };
+
+            LineColumnChartSerie line = new LineColumnChartSerie
+            {
+                name = "Social Media",
+                type = "line",
+                data = new List<int> { 23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16 }
+            };
+
+            model.Series.Add(column);
+            model.Series.Add(line);
+
+            model.Labels = new List<string>()
+            {
+                "01 June 2024",
+                "02 June 2024",
+                "03 June 2024",
+                "04 June 2024",
+                "05 June 2024",
+                "06 June 2024",
+                "07 June 2024",
+                "08 June 2024",
+                "09 June 2024",
+                "10 June 2024",
+                "11 June 2024",
+                "12 June 2024"
+            };
 
             return View(model);
         }
@@ -323,6 +365,52 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
                 "Germany"
             };
             model.Series = new List<int> { 400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380 };
+            return View(model);
+        }
+
+        public IActionResult StackedBarChart()
+        {
+            var seriesData = new List<StackedBarSeries>
+            {
+                new StackedBarSeries { name = "Marine Sprite", data = new List<int> { 44, 55, 41, 37, 22, 43, 21 } },
+                new StackedBarSeries { name = "Striking Calf", data = new List<int> { 53, 32, 33, 52, 13, 43, 32 } },
+                new StackedBarSeries { name = "Tank Picture", data = new List<int> { 12, 17, 11, 9, 15, 11, 20 } },
+                new StackedBarSeries { name = "Bucket Slope", data = new List<int> { 9, 7, 5, 8, 6, 9, 4 } },
+                new StackedBarSeries { name = "Reborn Kid", data = new List<int> { 25, 12, 19, 32, 25, 24, 10 } }
+            };
+
+            var model = new StackedBarChartModel
+            {
+                Series = seriesData,
+                Categories = new List<int> { 2008, 2009, 2010, 2011, 2012, 2013, 2014 }
+            };
+            return View(model);
+        }
+
+        public IActionResult StackedColumns()
+        {
+            StackedColumnModel model = new StackedColumnModel();
+            model.Series = new List<Group>()
+            {
+                new Group
+                {
+                    Name = "Product A",
+                    Data = new List<int> { 44, 55, 41, 67, 22, 43 }
+                },
+                new Group
+                {
+                    Name = "Product B",
+                    Data = new List<int> { 13, 23, 20, 8, 13, 27 }
+                },
+                new Group
+                {
+                    Name = "Product C",
+                    Data = new List<int> { 11, 17, 15, 15, 21, 14 }
+                }
+            };
+            model.Categories = new List<string>() { "01/01/2011 GMT", "01/02/2011 GMT", "01/03/2011 GMT", "01/04/2011 GMT",
+                    "01/05/2011 GMT", "01/06/2011 GMT"};
+
             return View(model);
         }
     }
