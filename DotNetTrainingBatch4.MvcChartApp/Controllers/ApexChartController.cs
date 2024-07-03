@@ -13,6 +13,16 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
 
             return View(model);
         }
+
+        public IActionResult BasicLineChart()
+        {
+            BasicLineChartModel model = new BasicLineChartModel();
+            model.ProductName = "Desktops";
+            model.Datas = new List<int>() { 10, 41, 35, 51, 49, 62, 69, 91, 148 };
+            model.Categories = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" };
+            return View(model);
+        }
+        
         public IActionResult LineWithDataLabelsChart() { 
 
             LineWithDataLabelsChartModel FirstDataModel = new LineWithDataLabelsChartModel();
