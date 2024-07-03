@@ -13,5 +13,21 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
 
             return View(model);
         }
+        public IActionResult LineWithDataLabelsChart() { 
+
+            LineWithDataLabelsChartModel FirstDataModel = new LineWithDataLabelsChartModel();
+            FirstDataModel.Name = "High - 2013";
+            FirstDataModel.dataList = new List<int> { 28, 29, 33, 36, 32, 32, 33};
+
+            LineWithDataLabelsChartModel SecondDataModel = new LineWithDataLabelsChartModel();
+            SecondDataModel.Name = "Low - 2013";
+            SecondDataModel.dataList = new List<int> { 12, 11, 14, 18, 17, 13, 13 };
+
+            LineWithDataLabelsChartRespondModel respondModel = new LineWithDataLabelsChartRespondModel();
+            respondModel.FirstRecord = FirstDataModel;
+            respondModel.SecondRecord = SecondDataModel;
+
+            return View(respondModel);
+        }
     }
 }
