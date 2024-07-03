@@ -348,6 +348,32 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             return View(respondModel);
         }
 
+        public IActionResult PyramidChart()
+        {
+            PyramidChartModel model = new PyramidChartModel()
+            {
+                Series = new List<PyramidChartSeriesData>()
+                {
+                    new PyramidChartSeriesData()
+                    {
+                        name="",
+                        data=new List<int>(){200, 330, 548, 740, 880, 990, 1100, 1380 },
+                    }
+                },
+                Colors = new List<string>()
+                {
+                    "#F44F5E","#E55A89","#D863B1","#CA6CD8","#B57BED",
+                    "#8D95EB","#62ACEA","#4BC3E6"
+                },
+                Categories=new List<string>()
+                {
+                    "Sweets", "Processed Foods", "Healthy Fats", "Meat", "Beans & Legumes", "Dairy", "Fruits & Vegetables", "Grains"
+                }
+            };
+
+            return View(model);
+        }
+        
         public IActionResult BasicBarChart()
         {
             BasicBarChartModel model = new BasicBarChartModel();
