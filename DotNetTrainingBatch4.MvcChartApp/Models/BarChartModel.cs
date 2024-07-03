@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace DotNetTrainingBatch4.MvcChartApp.Models;
 
 public class BarChartModel
@@ -13,3 +13,8 @@ public class SeriesData
     public List<int> data { get; set; }
 }
 
+public class BarChartModel
+{
+    public List<int> Series { get; set; }
+    public List<string> Labels { get; set; }
+}
