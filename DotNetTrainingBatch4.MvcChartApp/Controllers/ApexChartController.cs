@@ -495,5 +495,34 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             };
             return View(model);
         }
+
+        public IActionResult BasicTimeLineChart()
+        {
+            BasicTimelineChartModel model = new BasicTimelineChartModel();
+            model.Data = new List<TaskName>
+            {
+                new TaskName
+                {
+                    x = "Code",
+                    y = new DateTime[] { new DateTime(2019, 3, 2), new DateTime(2019, 3, 4) }
+                },
+                new TaskName
+                {
+                    x = "Test",
+                    y = new DateTime[] { new DateTime(2019, 3, 4), new DateTime(2019, 3, 8) }
+                },
+                new TaskName
+                {
+                    x = "Validation",
+                    y = new DateTime[] { new DateTime(2019, 3, 8), new DateTime(2019, 3, 12) }
+                },
+                new TaskName
+                {
+                    x = "Deployment",
+                    y = new DateTime[] { new DateTime(2019, 3, 12), new DateTime(2019, 3, 18) }
+                }
+            };
+            return View(model);
+        }
     }
 }
