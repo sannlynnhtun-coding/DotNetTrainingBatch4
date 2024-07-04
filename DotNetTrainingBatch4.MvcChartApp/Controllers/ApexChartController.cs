@@ -495,5 +495,21 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
             };
             return View(model);
         }
+
+        public IActionResult FunnelChart()
+        {
+            FunnelChartModel model = new FunnelChartModel();
+            model.Data = new List<int> { 1380, 1100, 990, 880, 740, 548, 330, 200 };
+            model.Category = new List<string> {
+                    "Sourced",
+                    "Screened",
+                    "Assessed",
+                    "HR Interview",
+                    "Technical",
+                    "Verify",
+                    "Offered",
+                    "Hired"};
+            return View(model);
+        }
     }
 }
