@@ -89,3 +89,5 @@ Dependency Inject with Order
 Commit / Uncommit
 
 select * from Tbl_Blog with (nolock)
+
+https://github.com/chartjs/Chart.js/blob/master/docs/scripts/utils.js
