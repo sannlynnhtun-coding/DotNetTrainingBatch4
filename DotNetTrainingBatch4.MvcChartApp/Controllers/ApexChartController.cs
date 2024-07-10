@@ -478,6 +478,13 @@ namespace DotNetTrainingBatch4.MvcChartApp.Controllers
 
             return View(model);
         }
+        public IActionResult MonochromePieChart()
+        {
+            MonochromePieChartModel model = new MonochromePieChartModel();
+            model.Data = new List<int> { 25, 15, 44, 55, 41, 17 };
+            model.Date = new List<string>() { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+            return View(model);
+        }
 
         public IActionResult CustomDataLabelsBarChart()
         {
