@@ -49,7 +49,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.MvcCha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.ConsoleAppLogging", "DotNetTrainingBatch4.ConsoleAppLogging\DotNetTrainingBatch4.ConsoleAppLogging.csproj", "{CCAABB55-67F7-43AE-A0CD-C650589A9962}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.RealtimeChartApp", "DotNetTrainingBatch4.RealtimeChartApp\DotNetTrainingBatch4.RealtimeChartApp.csproj", "{BBCC2C58-17F9-4BE9-A95D-EC42C0CEBC8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.RealtimeChartApp", "DotNetTrainingBatch4.RealtimeChartApp\DotNetTrainingBatch4.RealtimeChartApp.csproj", "{BBCC2C58-17F9-4BE9-A95D-EC42C0CEBC8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.RealtimeChartApp2", "DotNetTrainingBatch4.RealtimeChartApp2\DotNetTrainingBatch4.RealtimeChartApp2.csproj", "{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +139,10 @@ Global
 		{BBCC2C58-17F9-4BE9-A95D-EC42C0CEBC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBCC2C58-17F9-4BE9-A95D-EC42C0CEBC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBCC2C58-17F9-4BE9-A95D-EC42C0CEBC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

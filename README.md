@@ -91,3 +91,15 @@ Commit / Uncommit
 select * from Tbl_Blog with (nolock)
 
 https://github.com/chartjs/Chart.js/blob/master/docs/scripts/utils.js
+
+Client A => Push
+Client B => Receive
+
+Dashboard Page
+
+
+Client A
+
+Product => [Server => Add Product (changes) => Server Client All] => Changes => 
+
+Scaffold-DbContext "Server=.;Database=DotNetTrainingBatch4;User ID=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context AppDbContext
