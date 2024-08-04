@@ -51,7 +51,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.Consol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.RealtimeChartApp", "DotNetTrainingBatch4.RealtimeChartApp\DotNetTrainingBatch4.RealtimeChartApp.csproj", "{BBCC2C58-17F9-4BE9-A95D-EC42C0CEBC8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.RealtimeChartApp2", "DotNetTrainingBatch4.RealtimeChartApp2\DotNetTrainingBatch4.RealtimeChartApp2.csproj", "{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.RealtimeChartApp2", "DotNetTrainingBatch4.RealtimeChartApp2\DotNetTrainingBatch4.RealtimeChartApp2.csproj", "{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.ConsoleAppEFCore", "DotNetTrainingBatch4.ConsoleAppEFCore\DotNetTrainingBatch4.ConsoleAppEFCore.csproj", "{E9F0F6D7-4393-44D6-8045-F7DEF4800BA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.ConsoleAppEFCore.Databases", "DotNetTrainingBatch4.ConsoleAppEFCore.Databases\DotNetTrainingBatch4.ConsoleAppEFCore.Databases.csproj", "{44D5EA66-FE58-41A8-B71B-347BB79E923C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +147,14 @@ Global
 		{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB4F2FC3-CD8B-4A7E-A601-44453AC7C865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9F0F6D7-4393-44D6-8045-F7DEF4800BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9F0F6D7-4393-44D6-8045-F7DEF4800BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9F0F6D7-4393-44D6-8045-F7DEF4800BA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9F0F6D7-4393-44D6-8045-F7DEF4800BA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D5EA66-FE58-41A8-B71B-347BB79E923C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D5EA66-FE58-41A8-B71B-347BB79E923C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D5EA66-FE58-41A8-B71B-347BB79E923C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D5EA66-FE58-41A8-B71B-347BB79E923C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

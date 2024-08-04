@@ -103,3 +103,5 @@ Client A
 Product => [Server => Add Product (changes) => Server Client All] => Changes => 
 
 Scaffold-DbContext "Server=.;Database=DotNetTrainingBatch4;User ID=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context AppDbContext
+
+dotnet ef dbcontext scaffold "Server=.;Database=DotNetTrainingBatch4;User Id=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c AppDbContext -f
