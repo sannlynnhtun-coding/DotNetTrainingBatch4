@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.MvcDesignApp", "DotNetTrainingBatch4.MvcDesignApp\DotNetTrainingBatch4.MvcDesignApp.csproj", "{CFA1E9A4-6140-4FC4-80E3-6D1915A2CAFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.BlazorWasm", "DotNetTrainingBatch4.BlazorWasm\DotNetTrainingBatch4.BlazorWasm.csproj", "{97A03478-CFFF-4148-92CE-E00875D9F115}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -161,6 +163,10 @@ Global
 		{CFA1E9A4-6140-4FC4-80E3-6D1915A2CAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA1E9A4-6140-4FC4-80E3-6D1915A2CAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA1E9A4-6140-4FC4-80E3-6D1915A2CAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A03478-CFFF-4148-92CE-E00875D9F115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A03478-CFFF-4148-92CE-E00875D9F115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A03478-CFFF-4148-92CE-E00875D9F115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A03478-CFFF-4148-92CE-E00875D9F115}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
