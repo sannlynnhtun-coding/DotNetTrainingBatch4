@@ -144,6 +144,62 @@ git push
   - Client A pushes updates to the server.
   - Server broadcasts changes to all clients, ensuring synchronization.
 
+
+### Git Commit Message Prefixes
+
+- **feat:**  
+  Indicates a new feature (e.g., `feat: add user login functionality`).
+
+- **fix:**  
+  A bug fix (e.g., `fix: resolve issue with user login`).
+
+- **chore:**  
+  Maintenance tasks, such as refactoring, adding non-functional code, or updating dependencies (e.g., `chore: update dependencies`).
+
+- **docs:**  
+  Documentation changes (e.g., `docs: update README with installation instructions`).
+
+- **style:**  
+  Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc.) (e.g., `style: format code with Prettier`).
+
+- **refactor:**  
+  A code change that neither fixes a bug nor adds a feature (e.g., `refactor: simplify the user authentication flow`).
+
+- **perf:**  
+  A code change that improves performance (e.g., `perf: optimize user login process`).
+
+- **test:**  
+  Adding missing tests or correcting existing tests (e.g., `test: add unit tests for user login`).
+
+- **build:**  
+  Changes that affect the build system or external dependencies (e.g., `build: update webpack configuration`).
+
+- **ci:**  
+  Changes to CI configuration files and scripts (e.g., `ci: add GitHub Actions for testing`).
+
+- **revert:**  
+  Reverts a previous commit (e.g., `revert: revert commit abc1234`).
+
+- **merge:**  
+  Merge branches (e.g., `merge: merge branch 'feature-branch' into 'main'`).
+
+- **hotfix:**  
+  A quick fix that needs to be applied immediately (e.g., `hotfix: correct typo in production`).
+
+### Example Commit Messages
+
+- `feat: add search functionality to the navbar`
+- `fix: resolve crash on login page`
+- `chore: clean up unused variables`
+- `docs: update API documentation`
+- `style: format code with ESLint`
+- `refactor: streamline payment processing`
+- `perf: improve loading speed of dashboard`
+- `test: add tests for password validation`
+- `build: configure Babel for ES6 support`
+- `ci: integrate code coverage with CI pipeline`
+- `revert: revert "feat: add search functionality"`
+
 ## Thank You!
 
 Thank you for using this project! Your contributions and feedback are highly appreciated. If you have any questions or need further assistance, feel free to reach out.
