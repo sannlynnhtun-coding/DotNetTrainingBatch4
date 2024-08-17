@@ -1,0 +1,69 @@
+﻿@model List<BlogEntity>
+
+<a href="/Blog/Create" class="btn btn-success">New</a>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="/Blog/Edit/@item.BlogId" class="btn btn-outline-warning">Edit</a>
+                    @* <a href="/Blog/Edit/blogId=@item.BlogId" class="btn btn-outline-warning">Edit</a> *@
+                    @* <a href="/Blog/Edit/@item.BlogId" >Edit</a> *@
+                    <button class="btn btn-danger btn-delete" data-blog-id="@item.BlogId">Delete</button>
+                </td>
+                <td>@item.BlogId</td>
+                <td>@item.BlogTitle</td>
+                <td>@item.BlogAuthor</td>
+                <td>@item.BlogContent</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts {
+    <script>
+        $('.btn-delete').click(function (e) {
+            e.preventDefault();
+
+            let isConfirm = confirm("Are you sure want to delete?");
+            if (!isConfirm) return;
+
+            let id = $(this).data('blog-id');
+
+            let _blog = {
+                BlogId: id
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/Blog/Delete',
+                data: { blog: _blog },
+                dataType: "JSON",
+                success: function (result) {
+                    console.log("RESULT", result);
+
+                    if (!result.IsSuccess) {
+                        alert(result.Message)
+                        return;
+                    }
+
+                    alert(result.Message);
+                    location.href = "/Blog";
+                },
+                error: function (xhr, status, error) {
+                    var err = eval("(" + xhr.responseText + ")");
+                    alert(err.Message);
+                }
+            });
+        })
+    </script>
+}

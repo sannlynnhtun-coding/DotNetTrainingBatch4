@@ -1,0 +1,57 @@
+﻿@model BlogEntity
+
+<div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="email" class="form-control" id="txtTitle" value="@Model.BlogTitle">
+</div>
+<div class="mb-3">
+    <label class="form-label">Author</label>
+    <input type="email" class="form-control" id="txtAuthor" value="@Model.BlogAuthor">
+</div>
+<div class="mb-3">
+    <label class="form-label">Content</label>
+    <input type="email" class="form-control" id="txtContent" value="@Model.BlogContent">
+</div>
+<a href="/Blog" class="btn btn-outline-dark">Back</a>
+<button type="button" class="btn btn-success" id="btnUpdate">Update</button>
+@section scripts {
+    <script>
+        $('#btnUpdate').click(function (e) {
+            e.preventDefault();
+
+            let title = $('#txtTitle').val();
+            let author = $('#txtAuthor').val();
+            let content = $('#txtContent').val();
+
+            let _blog = {
+                BlogTitle: title,
+                BlogAuthor: author,
+                BlogContent: content
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/Blog/Update/@Model.BlogId',
+                data: { blog: _blog },
+                // data: JSON.stringify(_blog),
+                // contentType: 'application/json',
+                dataType: "JSON",
+                success: function (result) {
+                    console.log("RESULT", result);
+
+                    if (!result.IsSuccess) {
+                        alert(result.Message)
+                        return;
+                    }
+
+                    alert(result.Message);
+                    location.href = "/Blog";
+                },
+                error: function (xhr, status, error) {
+                    var err = eval("(" + xhr.responseText + ")");
+                    alert(err.Message);
+                }
+            });
+        })
+    </script>
+}
