@@ -20,6 +20,10 @@ SLHDotNetCore
 
 ## Key Dates & Development Timeline
 
+
+- **2024-03-30**: Microsoft SQL Server Installation & Visual Studio Installation
+- **2024-04-04**: C# Basic & SQL Basic
+- **2024-04-04**: [VS Code Installation](https://youtu.be/O4dCgYicoDg), Installers (JetBrains DatGrip, JetBrains Rider, Beyond Compare)
 - **2024-04-09**: Console Application Development
 - **2024-04-10**: Ado.Net CRUD Implementation
 - **2024-04-22**: Dapper CRUD Implementation
@@ -28,7 +32,46 @@ SLHDotNetCore
 - **2024-04-29**: ASP.NET Core Web API Dapper CRUD Implementation
 - **2024-05-01**: ASP.NET Core Web API Ado.Net CRUD, Dapper Custom Service, Ado.Net Custom Service Implementation
 - **2024-05-07**: Layered (N-Layer) Architecture, Burma Project Idea Discussion for API, JSON data to API
-- **2024-05-08**: Console App CRUD with API using HttpClient & RestClient (RestSharp)
+- **2024-05-08**: Console App CRUD with API using HttpClient 
+- **2024-05-09**: Console App CRUD with API using RestClient (RestSharp) 
+- **2024-05-13**: Myanmar Proverbs API, Pizza API
+- **2024-05-15**: Pizza API using Query with Dapper Service
+- **2024-05-15**: Console App CRUD with API using Refit, Windows Forms Intro
+- **2024-05-15**: .NET Framework vs .NET Core vs .NET
+- **2024-05-15**: Windows Forms - Hello World
+- **2024-05-15**: Windows Forms Blog - Create
+- **2024-05-27**: Windows Forms Blog - List
+- **2024-05-28**: Windows Forms Blog - Edit, Delete
+- **2024-05-28**: If Case, Switch Case
+- **2024-05-28**: Sql Injection
+- **2024-05-28**: NLayer Architecture
+- **2024-05-29**: JavaScript Blog CRUD
+- **2024-05-29**: Html + JavaScript Blog CRUD
+- **2024-06-03**: jQuery Plugin (SweetAlert, Notiflix)
+- **2024-06-04**: jQuery Plugins - DataTable, Date Picker, Ladda Button, iCheckbox, Custom Confirm Message
+- **2024-06-10**: Dependency Injection
+- **2024-06-10**: Dependency Injection - Code
+- **2024-06-11**: JetBrains Rider Installation
+- **2024-07-08**: ASP.NET Core Minimal API CRUD
+- **2024-07-08**: ASP.NET Core Web MVC Blog List
+- **2024-07-08**: ASP.NET Core Web MVC Blog Create
+- **2024-07-08**: ASP.NET Core Web MVC Blog Edit Update Delete
+- **2024-07-08**: AsNoTracking
+- **2024-07-31**: ASP.NET Core MVC Ajax (no voice / voice error - goto 2024-08-18)
+- **2024-08-03**: ASP.NET Core Apex Chart - Pie Chart
+- **2024-08-03**: ASP.NET Core Chart.js, HighCharts, CanvasJs, Text Log
+- **2024-08-03**: Db Log Part - 1
+- **2024-08-03**: Db Log Part - 2
+- **2024-08-03**: Realtime Chat using SignalR Part - 1
+- **2024-08-03**: Realtime Chat using SignalR Part - 2
+- **2024-08-03**: Realtime Chart using SignalR
+- **2024-08-04**: EFCore Database First
+- **2024-08-11**: ASP.NET Core MVC + UI Design (Admin LTE)
+- **2024-08-11**: Blazor Server, Blazor Web Assembly
+- **2024-08-11**: About Blazor Web Assembly Project
+- **2024-08-11**: About Blazor Web Assembly Project
+- **2024-08-18**: ASP.NET Core MVC Ajax - V2
+
 
 ## Project Components
 
