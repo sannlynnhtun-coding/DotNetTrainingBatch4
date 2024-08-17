@@ -1,9 +1,5 @@
 ﻿# DotNetTrainingBatch4
 
-## SLHDotNetCore Project - README
-
-Welcome to the SLHDotNetCore project! This repository contains a collection of projects and samples demonstrating various .NET Core and ASP.NET Core functionalities, including Console Applications, REST APIs, Entity Framework Core, Ado.Net, Dapper, and Blazor.
-
 ## Folder Structure
 
 ```plaintext
