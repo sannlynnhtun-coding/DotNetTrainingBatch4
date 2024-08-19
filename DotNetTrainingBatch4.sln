@@ -61,7 +61,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.MvcDes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.BlazorWasm", "DotNetTrainingBatch4.BlazorWasm\DotNetTrainingBatch4.BlazorWasm.csproj", "{97A03478-CFFF-4148-92CE-E00875D9F115}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.MvcApp3", "DotNetTrainingBatch4.MvcApp3\DotNetTrainingBatch4.MvcApp3.csproj", "{0501085B-508F-4C8B-B4D0-1C15E2F9A018}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.MvcApp3", "DotNetTrainingBatch4.MvcApp3\DotNetTrainingBatch4.MvcApp3.csproj", "{0501085B-508F-4C8B-B4D0-1C15E2F9A018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.BlazorWasm2", "DotNetTrainingBatch4.BlazorWasm2\DotNetTrainingBatch4.BlazorWasm2.csproj", "{CC54CB3C-1D11-4764-831F-AA75727019EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -173,6 +175,10 @@ Global
 		{0501085B-508F-4C8B-B4D0-1C15E2F9A018}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0501085B-508F-4C8B-B4D0-1C15E2F9A018}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0501085B-508F-4C8B-B4D0-1C15E2F9A018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC54CB3C-1D11-4764-831F-AA75727019EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC54CB3C-1D11-4764-831F-AA75727019EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC54CB3C-1D11-4764-831F-AA75727019EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC54CB3C-1D11-4764-831F-AA75727019EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
