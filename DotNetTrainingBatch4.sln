@@ -63,7 +63,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.Blazor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.MvcApp3", "DotNetTrainingBatch4.MvcApp3\DotNetTrainingBatch4.MvcApp3.csproj", "{0501085B-508F-4C8B-B4D0-1C15E2F9A018}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.BlazorWasm2", "DotNetTrainingBatch4.BlazorWasm2\DotNetTrainingBatch4.BlazorWasm2.csproj", "{CC54CB3C-1D11-4764-831F-AA75727019EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.BlazorWasm2", "DotNetTrainingBatch4.BlazorWasm2\DotNetTrainingBatch4.BlazorWasm2.csproj", "{CC54CB3C-1D11-4764-831F-AA75727019EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

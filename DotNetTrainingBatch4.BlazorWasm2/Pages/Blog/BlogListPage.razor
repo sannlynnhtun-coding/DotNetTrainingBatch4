@@ -1,0 +1,135 @@
+﻿@page "/blog"
+@inject HttpClient httpClient
+@inject IJSRuntime jsRuntime
+
+<PageTitle>Blog List</PageTitle>
+
+<h1>Blog</h1>
+
+<NavLink href="/blog/create" class="btn btn-outline-success">New</NavLink>
+
+@if (_blog is not null)
+{
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" @bind-value="_blog.BlogTitle">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Author</label>
+        <input type="text" class="form-control" @bind-value="_blog.BlogAuthor">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Content</label>
+        <input type="text" class="form-control" @bind-value="_blog.BlogContent">
+    </div>
+    <button type="button" class="btn btn-outline-dark" @onclick="Back">Back</button>
+    <button type="button" class="btn btn-success" @onclick="Update">Update</button>
+}
+
+
+@if (_blogs is not null)
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in _blogs)
+            {
+                var editLink = $"/blog/edit/{item.BlogId}";
+                <tr>
+                    <td>
+                        @*  <NavLink href="@editLink" class="btn btn-outline-warning">
+                Edit
+                </NavLink> *@
+                        <button type="button" @onclick="() => Edit(item.BlogId)" class="btn btn-outline-warning">Edit</button>
+                        <button type="button" @onclick="() => Delete(item.BlogId)" class="btn btn-outline-danger">Delete</button>
+                    </td>
+                    <td>@item.BlogId</td>
+                    <td>@item.BlogTitle</td>
+                    <td>@item.BlogAuthor</td>
+                    <td>@item.BlogContent</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<BlogModel>? _blogs = null;
+    private BlogModel? _blog = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await List();
+    }
+
+    private async Task List()
+    {
+        var response = await httpClient.GetAsync("api/Blog");
+        if (response.IsSuccessStatusCode)
+        {
+            var jsonStr = await response.Content.ReadAsStringAsync();
+            // Console.WriteLine(jsonStr);
+            // json to C#
+
+            _blogs = JsonConvert.DeserializeObject<List<BlogModel>>(jsonStr)!;
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+        }
+    }
+
+    private async Task Update()
+    {
+        var jsonBlog = JsonConvert.SerializeObject(_blog);
+        var content = new StringContent(jsonBlog, Encoding.UTF8, Application.Json);
+        var response = await httpClient.PutAsync($"api/blog/{_blog.BlogId}", content);
+        if (response.IsSuccessStatusCode)
+        {
+            var jsonStr = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(jsonStr);
+            _blog = null;
+            await List();
+        }
+    }
+
+    private async Task Edit(int id)
+    {
+        var response = await httpClient.GetAsync($"api/blog/{id}");
+        if (!response.IsSuccessStatusCode) return;
+
+        var jsonStr = await response.Content.ReadAsStringAsync();
+        _blog = JsonConvert.DeserializeObject<BlogModel>(jsonStr)!;
+    }
+
+    private void Back()
+    {
+        _blog = null;
+    }
+
+    private async Task Delete(int id)
+    {
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure want to delete?");
+        if (!confirm) return;
+
+        var response = await httpClient.DeleteAsync($"api/blog/{id}");
+        if (!response.IsSuccessStatusCode) return;
+
+        var message = await response.Content.ReadAsStringAsync();
+        await jsRuntime.InvokeVoidAsync("alert", message);
+        // alert(message)
+        await List();
+    }
+}
