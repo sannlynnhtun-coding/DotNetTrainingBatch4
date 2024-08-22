@@ -1,7 +1,7 @@
-﻿@page "/edit"
-@page "/blog/edit/{id?}"
+﻿@page "/blog/edit/{blogId:int}"
 @inject HttpClient httpClient
 @inject NavigationManager nav
+@inject IJSRuntime jsRuntime
 
 <PageTitle>Edit Blog</PageTitle>
 
@@ -24,9 +24,9 @@
 }
 
 @code {
-
     [Parameter]
-    public string? id { get; set; }
+
+    public int BlogId { get; set; }
 
     private BlogModel? _blog = null;
 
@@ -34,13 +34,13 @@
     {
         if (firstRender)
         {
-            var response = await httpClient.GetAsync($"api/blog/{id}");
-            if (!response.IsSuccessStatusCode)
+            var response = await httpClient.GetAsync($"api/blog/{BlogId}");
+            if (response.IsSuccessStatusCode)
             {
-                nav.NavigateTo("/blog");
+                var jsonStr = await response.Content.ReadAsStringAsync();
+                _blog = JsonConvert.DeserializeObject<BlogModel>(jsonStr);
+                StateHasChanged();
             }
-            var jsonStr = await response.Content.ReadAsStringAsync();
-            _blog = JsonConvert.DeserializeObject<BlogModel>(jsonStr);
         }
     }
 
@@ -48,11 +48,11 @@
     {
         var jsonBlog = JsonConvert.SerializeObject(_blog);
         var content = new StringContent(jsonBlog, Encoding.UTF8, Application.Json);
-        var response = await httpClient.PutAsync($"api/blog/{id}", content);
+        var response = await httpClient.PutAsync($"api/blog/{BlogId}", content);
         if (response.IsSuccessStatusCode)
         {
-            var jsonStr = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(jsonStr);
+            var message = await response.Content.ReadAsStringAsync();
+            await jsRuntime.InvokeVoidAsync("alert", message);
             nav.NavigateTo("/blog");
         }
     }

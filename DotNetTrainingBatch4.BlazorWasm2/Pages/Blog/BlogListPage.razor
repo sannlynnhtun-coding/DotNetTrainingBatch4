@@ -45,9 +45,7 @@
                 var editLink = $"/blog/edit/{item.BlogId}";
                 <tr>
                     <td>
-                        @*  <NavLink href="@editLink" class="btn btn-outline-warning">
-                Edit
-                </NavLink> *@
+                        <NavLink href="@editLink" class="btn btn-outline-dark">Edit</NavLink>
                         <button type="button" @onclick="() => Edit(item.BlogId)" class="btn btn-outline-warning">Edit</button>
                         <button type="button" @onclick="() => Delete(item.BlogId)" class="btn btn-outline-danger">Delete</button>
                     </td>
