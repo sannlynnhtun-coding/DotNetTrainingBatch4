@@ -227,3 +227,9 @@ public class MyController : ControllerBase
 
 - `feat: add search functionality to navbar`
 - `fix:
+
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-7.0
+
+session
+
+cookie

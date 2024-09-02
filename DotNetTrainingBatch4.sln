@@ -65,7 +65,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.MvcApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.BlazorWasm2", "DotNetTrainingBatch4.BlazorWasm2\DotNetTrainingBatch4.BlazorWasm2.csproj", "{CC54CB3C-1D11-4764-831F-AA75727019EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.BlazorServer", "DotNetTrainingBatch4.BlazorServer\DotNetTrainingBatch4.BlazorServer.csproj", "{CA158253-A23B-4054-855F-9658282BAE85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4.BlazorServer", "DotNetTrainingBatch4.BlazorServer\DotNetTrainingBatch4.BlazorServer.csproj", "{CA158253-A23B-4054-855F-9658282BAE85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch4.MiddlewareApp", "DotNetTrainingBatch4.MiddlewareApp\DotNetTrainingBatch4.MiddlewareApp.csproj", "{3CD006EA-D9AB-43E6-9042-1071B81BEB70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -185,6 +187,10 @@ Global
 		{CA158253-A23B-4054-855F-9658282BAE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA158253-A23B-4054-855F-9658282BAE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA158253-A23B-4054-855F-9658282BAE85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD006EA-D9AB-43E6-9042-1071B81BEB70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD006EA-D9AB-43E6-9042-1071B81BEB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD006EA-D9AB-43E6-9042-1071B81BEB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD006EA-D9AB-43E6-9042-1071B81BEB70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
