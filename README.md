@@ -228,8 +228,106 @@ public class MyController : ControllerBase
 - `feat: add search functionality to navbar`
 - `fix:
 
-https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-7.0
+----------------------
 
-session
+## [Middleware Overview](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-7.0)
 
-cookie
+Middleware in ASP.NET Core handles HTTP requests and responses. Middleware components are executed in the order they are added to the request pipeline, making their order crucial for processing requests. Common middleware tasks include authentication, logging, and request/response modification.
+
+### [Custom Middleware Class](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-7.0)
+
+```csharp
+public class SessionMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public SessionMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        if (context.Request.Path == "/" || context.Request.Path.ToString().ToLower() == "/login")
+            goto result;
+
+        string name = context.Session.GetString("name");
+        if (name == null)
+        {
+            context.Response.Redirect("/");
+            return;
+        }
+
+    result:
+        await _next(context);
+    }
+}
+```
+
+### Extension Method
+
+To simplify adding the middleware to the pipeline, an extension method `UseSessionMiddleware` is provided:
+
+```csharp
+public static class SessionMiddlewareExtensions
+{
+    public static IApplicationBuilder UseSessionMiddleware(this IApplicationBuilder builder)
+    {
+        return builder.UseMiddleware<SessionMiddleware>();
+    }
+}
+```
+
+### Usage in `Program.cs`
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.UseSession();  // Ensure session is added to the pipeline
+app.UseSessionMiddleware();
+
+app.Run(async (context) =>
+{
+    await context.Response.WriteAsync(
+        $"Welcome, {context.Session.GetString("name") ?? "Guest"}!");
+});
+
+app.Run();
+```
+
+## Explanation
+
+- **SessionMiddleware**: This middleware checks if the session contains a "name" value. If not, it redirects the user to the home page (`/`). It allows requests to proceed if they are to the root path or `/Login`.
+- **Extension Method**: Simplifies the addition of the custom middleware to the application's request pipeline.
+- **Usage**: The middleware is integrated into the application pipeline, affecting how requests are processed based on session state.
+
+## [HttpContext](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-context?view=aspnetcore-7.0)
+
+`HttpContext` represents the context of an individual HTTP request, providing access to details like the request, response, user identity, session, and more. In ASP.NET Core, you can use `IHttpContextAccessor` to access `HttpContext` outside of controllers or middleware, such as in services or background tasks.
+
+Here’s an example of using `IHttpContextAccessor`:
+
+```csharp
+public class MyService
+{
+    private readonly IHttpContextAccessor _httpContextAccessor;
+
+    public MyService(IHttpContextAccessor httpContextAccessor)
+    {
+        _httpContextAccessor = httpContextAccessor;
+    }
+
+    public void DoSomething()
+    {
+        var context = _httpContextAccessor.HttpContext;
+        var userName = context.User.Identity.Name;
+        // Perform actions based on the user's identity
+    }
+}
+```
+
+### Explanation:
+- **Dependency Injection**: `IHttpContextAccessor` is injected into the service, allowing access to the current `HttpContext`.
+- **Accessing `HttpContext`**: You can retrieve the `HttpContext` via `_httpContextAccessor.HttpContext`.
+- **Usage Consideration**: Ensure thread safety since `HttpContext` is only available in the scope of a request.
